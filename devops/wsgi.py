@@ -1,5 +1,5 @@
 """
-WSGI config for soms project.
+WSGI config for devops project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

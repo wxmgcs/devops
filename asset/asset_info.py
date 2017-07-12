@@ -9,7 +9,7 @@
 '''
 
 from deploy.saltapi import SaltAPI
-from soms import settings
+from devops import settings
 import threading
 
 asset_info = []

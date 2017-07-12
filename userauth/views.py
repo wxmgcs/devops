@@ -65,7 +65,7 @@ def deprecate_current_app(func):
 
 @login_required
 def index(request):
-    return render(request, 'soms_help.html', {})
+    return render(request, 'devops_help.html', {})
 
 @deprecate_current_app
 @sensitive_post_parameters()

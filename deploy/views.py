@@ -17,7 +17,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from deploy.saltapi import SaltAPI
-from soms import settings
+from devops import settings
 from userperm.views import UserIP
 from userperm.models import *
 from .models import *
