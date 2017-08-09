@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32f96067-a830-4599-9ae5-7a5fcef8d61a" name="Default" comment="" />
+    <list default="true" id="32f96067-a830-4599-9ae5-7a5fcef8d61a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/program_list.html" afterPath="$PROJECT_DIR$/templates/program_list.html" />
+    </list>
     <ignored path="devops.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +39,8 @@
       <file leaf-file-name="program_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/program_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="70" column="69" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
+            <state relative-caret-position="225">
+              <caret line="15" column="69" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -928,8 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/program_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="70" column="69" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
+        <state relative-caret-position="225">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="69" />
           <folding />
         </state>
       </provider>
