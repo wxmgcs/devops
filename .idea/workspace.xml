@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32f96067-a830-4599-9ae5-7a5fcef8d61a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DEV.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/program_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/asset_server_list.html" afterPath="$PROJECT_DIR$/templates/asset_server_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/devops_help.html" afterPath="$PROJECT_DIR$/templates/devops_help.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userauth/templates/registration/base.html" afterPath="$PROJECT_DIR$/userauth/templates/registration/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userauth/views.py" afterPath="$PROJECT_DIR$/userauth/views.py" />
-    </list>
+    <list default="true" id="32f96067-a830-4599-9ae5-7a5fcef8d61a" name="Default" comment="" />
     <ignored path="devops.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +37,8 @@
       <file leaf-file-name="program_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/program_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+            <state relative-caret-position="660">
+              <caret line="70" column="69" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -937,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/program_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+        <state relative-caret-position="660">
+          <caret line="70" column="69" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
           <folding />
         </state>
       </provider>
