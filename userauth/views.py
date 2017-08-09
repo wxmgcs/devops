@@ -39,7 +39,7 @@ from userperm.views import UserIP
 from userperm.models import Message
 
 import json
-
+import StringIO
 from .forms import *
 
 
@@ -63,9 +63,36 @@ def deprecate_current_app(func):
         return func(*args, **kwargs)
     return inner
 
+
+
+def  get_programlist():
+    all_program = []
+    # status = 1 '运行中', status = 0,已停止
+    all_program.append(dict(pk=1,id='E_1',status=1,type=1,vpn_number=1,ip='192.168.3.31/211.111.222.333',os_type=1,operator=1))
+    all_program.append(dict(pk=2,id='P_1',status=0,type=2,vpn_number=2,ip='192.168.3.32/211.111.222.334',os_type=2,operator=1))
+    all_program.append(dict(pk=3,id='E_31',status=1,type=3,vpn_number=1,ip='192.168.3.33/211.111.222.335',os_type=1,operator=1))
+    return all_program
+
+
+
 @login_required
 def index(request):
-    return render(request, 'devops_help.html', {})
+    '''
+    获取服务器资产信息
+    '''
+    if request.method == 'GET':
+
+        if request.user.has_perm('asset.view_asset'):
+            ret = ''
+            all_program = get_programlist()
+
+
+
+            print request.GET
+        else:
+            raise Http404
+        return render(request, 'program_list.html', {'all_program': all_program})
+
 
 @deprecate_current_app
 @sensitive_post_parameters()

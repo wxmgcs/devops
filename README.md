@@ -15,3 +15,6 @@ python manage.py check
 
 启动服务
 python manage.py runserver 0.0.0.0:9992
+
+参考资料:
+http://css.cleanc.cn/

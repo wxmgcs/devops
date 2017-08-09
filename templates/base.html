@@ -25,19 +25,19 @@
                 <div class="col-md-3 left_col">
                     <div class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>DevOps运维平台</span></a>
+                            <a href="/" class="site_title"><i class="fa fa-home"></i> <span>DevOps运维平台</span></a>
                         </div>
 
                         <div class="clearfix"></div>
 
                         <!-- menu profile quick info -->
                         <div class="profile">
-                            <div class="profile_pic">
-                                <img src="/static/img/avatar2.jpg" alt="..." class="img-circle profile_img">
-                            </div>
+                            <!--<div class="profile_pic">-->
+                                <!--<img src="/static/img/avatar2.jpg" alt="..." class="img-circle profile_img">-->
+                            <!--</div>-->
                             <div class="profile_info">
-                                <span>Welcome,</span>
-                                <h2>{% if request.user.first_name %}{{ request.user.first_name  }}{% else %}{{ request.user  }}{% endif %}</h2>
+                                <span>Welcome,{% if request.user.first_name %}{{ request.user.first_name  }}{% else %}{{ request.user  }}{% endif %}</span>
+                                <!--<h2></h2>-->
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -50,10 +50,10 @@
                                 <ul class="nav side-menu">
                                     <li><a><i class="fa fa-tachometer"></i> 控制面板 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="/">帮助</a></li>
+                                        <li><a href="/">程序列表</a></li>
                                     </ul>
                                     </li>
-                                    {% if perms.deploy.view_deploy %}
+                                    <!--{% if perms.deploy.view_deploy %}-->
                                     <li><a><i class="fa fa-cubes"></i> 部署管理 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         {% if request.user.is_superuser %}
@@ -170,7 +170,7 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="/static/img/avatar2.jpg" alt="">
+                                        <!--<img src="/static/img/avatar2.jpg" alt="">-->
                                         {% if request.user.first_name %}
                                             {{ request.user.first_name  }}
                                         {% else %}
@@ -198,7 +198,7 @@
                     <!-- footer content -->
                     <footer>
                         <div class="pull-right">
-                            SOMS运维平台 - Powered by <a href="https://imaojia.com" target="_blank">爱猫家</a>
+                            DevOps运维平台 - Powered by <a href="" target="_blank"></a>
                         </div>
                         <div class="clearfix"></div>
                     </footer>
