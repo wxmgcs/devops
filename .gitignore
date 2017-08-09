@@ -99,3 +99,13 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+# wxmgcs
+db.sqlite3
+.DS_Store
+.idea
+asset/migrations/
+deploy/migrations/
+userauth/migrations/
+userperm/migrations/
