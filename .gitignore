@@ -105,7 +105,7 @@ ENV/
 db.sqlite3
 .DS_Store
 .idea
-asset/migrations/
-deploy/migrations/
-userauth/migrations/
-userperm/migrations/
+asset/migrations/*
+deploy/migrations/*
+userauth/migrations/*
+userperm/migrations/*
