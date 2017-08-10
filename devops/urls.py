@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^user_perm/dir/manage/delete/$', uviews.user_dir_manage, name='dir_delete'),
     url(r'^user_perm/dir/manage/(?P<id>\d+)/edit/$', uviews.user_dir_manage, name='dir_edit'),
     url(r'^deploy/key_list/$', dviews.salt_key_list, name='key_list'),
+    url(r'^deploy/program_list/$', dviews.salt_program_list, name='program_list'),
     url(r'^deploy/key_list_import/$', dviews.salt_key_import, name='key_import'),
     url(r'^deploy/key_manage$', dviews.salt_key_manage, name='key_add'),
     url(r'^deploy/key_manage$', dviews.salt_key_manage, name='key_delete'),

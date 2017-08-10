@@ -388,6 +388,19 @@ def salt_key_list(request):
     else:
         raise Http404
 
+
+@login_required
+def salt_program_list(request):
+    if request.user.is_superuser:
+        minions = SaltHost.objects.filter(status=True)
+        minions_pre = SaltHost.objects.filter(status=False)
+        return render(request, 'salt_program_list.html', {'all_minions':minions,'all_minions_pre':minions_pre})
+    else:
+        raise Http404
+
+
+
+
 @login_required
 def salt_key_import(request):
     '''

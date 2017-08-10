@@ -53,12 +53,14 @@
                                         <li><a href="/">程序列表</a></li>
                                     </ul>
                                     </li>
-                                    <!--{% if perms.deploy.view_deploy %}-->
+                                    {% if perms.deploy.view_deploy %}
                                     <li><a><i class="fa fa-cubes"></i> 部署管理 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         {% if request.user.is_superuser %}
                                         <li><a href="{% url 'key_list' %}">主机管理</a></li>
                                         <li><a href="{% url 'group_list' %}">分组管理</a>
+                                        <li><a href="{% url 'program_list' %}">程序管理</a></li>
+                                        <li><a href="{% url 'key_list' %}">日志管理</a></li>
                                             <ul class="nav child_menu">
                                                 <li class="sub_menu" style="display: none"><a href="{% url 'group_add' %}">新增主机分组</a>
                                                 </li>
