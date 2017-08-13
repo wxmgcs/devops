@@ -29,7 +29,9 @@
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="info"><a href="{% url 'key_import' %}" class="btn btn-info btn-sm" role="button" {% if not perms.deploy.edit_salthost %}disabled="disabled"{% endif %} data-toggle="tooltip" data-placement="right" title="系统计划任务，如非必要，请勿执行此操作">刷新Salt主机列表</a></div>
+                    <div class="info">
+                        <a href="{% url 'key_import' %}" class="btn btn-info btn-sm" role="button" {% if not perms.deploy.edit_salthost %}disabled="disabled"{% endif %} data-toggle="tooltip" data-placement="right" title="系统计划任务，如非必要，请勿执行此操作">刷新Salt主机列表</a>
+                    </div>
                     <div class="x_content">
                         <div class="ln_solid"></div>
                         <div class="info">

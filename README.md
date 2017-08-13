@@ -18,3 +18,8 @@ python manage.py runserver 0.0.0.0:9992
 
 参考资料:
 http://css.cleanc.cn/
+
+图表插件:highchars/echars
+
+cmdb= 采集数据+api+图表显示
+api的作用:避免过多连接数,避免一台机器被黑,导致的安全性问题.

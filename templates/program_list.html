@@ -31,6 +31,24 @@
                         <!--</ul>-->
                         <div class="clearfix"></div>
                     </div>
+                    <div class="pull-left">
+                        <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <select class="form-control ng-pristine ng-valid" ng-model="selectItem" ng-options="d.text for d in dimensions">
+                                    <option value="0" selected="selected">程序编号</option>
+                                    <option value="1">状态</option>
+                                    <option value="2">程序类型</option>
+                                    <option value="3">系统类型</option>
+                                </select>
+                            </div>
+                            <div class="form-group" ng-if="inputType == 'text' || inputType == undefined" class="form-group ng-scope">
+                                <input type="text" class="form-control console-searchbar-textinput ng-pristine ng-valid"
+                                       placeholder="搜索"  ng-model="searchForm.searchText">
+                            </div>
+                            <button type="submit" class="btn btn-primary ng-binding">搜索</button>
+                        </form>
+                    </div>
                     <form class="form-horizontal form-border" method="get" action="" name="formName">
 
                         <div class="x_content table-responsive" style="border:none">
@@ -81,7 +99,7 @@
                                                 <a href="#" data-toggle="dropdown" role="button"
                                                    aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">程序管理</a>
+                                                    <li><a href="{% url 'command_add' %}">程序管理</a>
                                                     </li>
                                                     <li><a href="#">日志管理</a>
                                                     </li>
@@ -91,6 +109,9 @@
                                                     </li>
                                                     <li><a href="#">远程命令</a>
                                                     </li>
+                                                    <li><a onclick="#myModalLabel">删除</a>
+                                                    </li>
+
                                                 </ul>
                                             </li>
                                         </ul>
@@ -102,6 +123,23 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                确定要删除?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
