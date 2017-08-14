@@ -15,6 +15,7 @@ function collapse(obj){
 }
 
 function remote_exec(obj, rtype, url) {
+    alert(url);
     var f=$(obj).closest("form");
     var tgt_select=f.find("select[name='tgt_select']").val();
     if(rtype=="exec"){
