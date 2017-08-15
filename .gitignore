@@ -109,3 +109,4 @@ asset/migrations/*
 deploy/migrations/*
 userauth/migrations/*
 userperm/migrations/*
+monitor/migrations/*
