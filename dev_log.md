@@ -39,6 +39,20 @@ openssl rsa -in localhost.key -out localhost_nopass.key
 note: 如果不用localhost_nopass.key,每次启动salt-api都需要输入密码
 
 
+vim /etc/salt/master
+rest_cherrypy:
+  port: 8000
+  host: 0.0.0.0
+  debug: True
+  ssl_crt: /etc/pki/tls/certs/localhost.crt
+  ssl_key: /etc/pki/tls/private/localhost_nopass.key
+
+external_auth:
+  pam:
+    saltapi:
+      - '*'
+      - '@wheel'
+      - '@runner'
 
 
 

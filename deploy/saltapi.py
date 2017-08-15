@@ -19,11 +19,11 @@ except ImportError:
     import simplejson as json
 
 class SaltAPI(object):
-    __token_id = ''
     def __init__(self,url,username,password):
         self.__url = url.rstrip('/')
         self.__user = username
         self.__password = password
+        self.__token_id = ''
         self.token_id()
 
     def token_id(self):
@@ -232,7 +232,10 @@ class SaltAPI(object):
 
 def main():
     saltapi = SaltAPI(url='https://devops.ctu.com:8000',username='saltapi',password='Ctu800617Ctu')
-    print saltapi.token_id()
+    # print saltapi.list_all_key()
+    # print saltapi.salt_running_jobs()
+    print saltapi.remote_localexec(tgt='group_genorder',fun='cmd.run',arg="ps -ef | grep unicomrecharge",
+                                   expr_form='nodegroup')
 
 if __name__ == '__main__':
 
