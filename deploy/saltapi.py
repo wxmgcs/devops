@@ -9,6 +9,9 @@
 '''
 
 import urllib2,urllib
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 
 try:
     import json
@@ -21,6 +24,7 @@ class SaltAPI(object):
         self.__url = url.rstrip('/')
         self.__user = username
         self.__password = password
+        self.token_id()
 
     def token_id(self):
         ''' user login and get token id '''
@@ -28,14 +32,17 @@ class SaltAPI(object):
         encode = urllib.urlencode(params)
         obj = urllib.unquote(encode)
         content = self.postRequest(obj,prefix='/login')
-	try:
+        try:
             self.__token_id = content['return'][0]['token']
         except KeyError:
             raise KeyError
 
     def postRequest(self,obj,prefix='/'):
         url = self.__url + prefix
-        headers = {'X-Auth-Token'   : self.__token_id}
+        if self.__token_id == '':
+            headers = {'Accept': 'application/json'}
+        else:
+            headers = {'X-Auth-Token': self.__token_id}
         req = urllib2.Request(url, obj, headers)
         opener = urllib2.urlopen(req)
         content = json.loads(opener.read())
@@ -224,7 +231,18 @@ class SaltAPI(object):
         return ret
 
 def main():
-    sapi = SaltAPI(url='https://127.0.0.1:8000',username='saltapi',password='password')
+    saltapi = SaltAPI(url='https://devops.ctu.com:8000',username='saltapi',password='Ctu800617Ctu')
+    print saltapi.token_id()
 
 if __name__ == '__main__':
+
+    # url = 'https://devops.ctu.com:8000/login'
+    # headers = {'Accept': 'application/json'}
+    # params = {'eauth': 'pam', 'username': 'saltapi', 'password': 'Ctu800617Ctu'}
+    # encode = urllib.urlencode(params)
+    # obj = urllib.unquote(encode)
+    # req = urllib2.Request(url, obj, headers)
+    # opener = urllib2.urlopen(req)
+    # content = json.loads(opener.read())
+    # print content
     main()
