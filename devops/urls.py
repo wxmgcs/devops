@@ -21,6 +21,7 @@ from django.conf.urls import include, url
 from deploy import views as dviews
 from userperm import views as uviews
 from asset import views as aviews
+from monitor import views as monitor_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -74,4 +75,6 @@ urlpatterns = [
     url(r'^asset/idc/add/$', aviews.idc_asset_manage, name='idc_add'),
     url(r'^asset/idc/edit/(?P<aid>\d+)/(?P<action>[\w-]+)/$', aviews.idc_asset_manage, name='idc_manage'),
     url(r'^asset/load_city/$', aviews.geo_input, name='load_city'),
+    url(r'^monitor/control_board/$',monitor_views.control_board,name='control_board'),
+
 ]
