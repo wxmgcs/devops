@@ -393,7 +393,10 @@ def salt_key_list(request):
 def salt_program_list(request):
     if request.user.is_superuser:
         minions = SaltHost.objects.filter(status=True)
+
         minions_pre = SaltHost.objects.filter(status=False)
+        print minions
+        print minions_pre
         return render(request, 'salt_program_list.html', {'all_minions':minions,'all_minions_pre':minions_pre})
     else:
         raise Http404

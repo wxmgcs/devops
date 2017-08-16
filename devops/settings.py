@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'userperm',
     'deploy',
     'asset',
+    'program_manage',
+    'logger_manage',
+    'vpn_manage',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -37,7 +37,6 @@ from models import User, UserGroup
 from deploy.models import SaltGroup
 from userperm.views import UserIP
 from userperm.models import Message
-
 import json
 import StringIO
 from .forms import *
@@ -79,74 +78,52 @@ def  get_programlist():
 
 @login_required
 def index(request):
-    '''
-    获取服务器资产信息
-    '''
-    if request.method == 'GET':
-        print "program list >>"," >> ",request.GET
+    return render(request,'control_board.html')
 
-        if request.user.has_perm('asset.view_asset'):
-            ret = ''
-            all_program = get_programlist()
-            print request.GET
-        else:
-            raise Http404
-        return render(request, 'program_list.html', {'all_program': all_program})
-    elif request.method == 'POST':
+    # all_program = Program.objects.filter()
+    # print all_program
+    #
+    # #
+    # '''
+    # 获取服务器资产信息
+    # '''
+    # if request.method == 'GET':
+    #     print "program list >>"," >> ",request.GET
+    #
+    #     if request.user.has_perm('asset.view_asset'):
+    #         ret = ''
+    #         print request.GET
+    #     else:
+    #         raise Http404
+    #     return render(request, 'program_list.html', {'all_program': all_program})
+    # elif request.method == 'POST':
+    #
+    #     print "program list >>",request.method," >> ",request.POST
+    #     # 处理根据哪些参数筛选程序名称
+    #     post_args = request.POST
+    #
+    #     # 新建程序
+    #     if 'new_program_name' in post_args:
+    #         program_id = post_args['new_program_name']
+    #         if program_id != '':
+    #             Program.objects.create(program_id=program_id)
+    #         return render(request, 'program_list.html', {'all_program': all_program})
+    #
+    #     filter = post_args['filter'][0]
+    #     search_text = post_args['search_text']
+    #     print search_text,filter
+    #
+    #     all_program = Program.objects.filter()
+    #
+    #     if len(search_text) < 1:
+    #         return render(request, 'program_list.html', {'all_program': all_program})
+    #
+    #     search_text = search_text
+    #     if search_text != '':
+    #         all_program = filter_programs(filter,search_text,all_program)
+    #     return render(request, 'program_list.html', {'all_program': all_program})
 
-        print "program list >>",request.method," >> ",request.POST
-        # 处理根据哪些参数筛选程序名称
-        post_args = request.POST
-        filter = post_args['filter'][0]
-        search_text = post_args['search_text']
-        print search_text,filter
 
-        all_program = get_programlist()
-
-        if len(search_text) < 1:
-            return render(request, 'program_list.html', {'all_program': all_program})
-
-        search_text = search_text
-        if search_text != '':
-            all_program = filter_programs(filter,search_text,all_program)
-        return render(request, 'program_list.html', {'all_program': all_program})
-
-
-FILTER_PROGRAM_NUMBER="0"
-FILTER_PROGRAM_STATUS="1"
-FILTER_PROGRAM_TYPE = "2"
-FILTER_SYSTEM_TYPE = "3"
-
-# 根据查询条件筛选程序
-def filter_programs(filter,search_text,all_programs):
-    ret = []
-    if filter == FILTER_PROGRAM_NUMBER:
-        for item in all_programs:
-            if item['id'] == search_text:
-                ret.append(item)
-        return ret
-    elif filter == FILTER_PROGRAM_STATUS:
-        for item in all_programs:
-            if item['status'] == int(search_text):
-                ret.append(item)
-        return ret
-    elif filter == FILTER_PROGRAM_TYPE:
-        for item in all_programs:
-            if item['type'] == int(search_text):
-                ret.append(item)
-        return ret
-    elif filter == FILTER_SYSTEM_TYPE:
-        if search_text.find("window") > -1:
-            os_type = 1
-        elif search_text.find("linux") > -1:
-            os_type = 2
-        else:
-            os_type = 0
-        for item in all_programs:
-            if item['os_type'] == os_type:
-                ret.append(item)
-        return ret
-    return ret
 
 @deprecate_current_app
 @sensitive_post_parameters()

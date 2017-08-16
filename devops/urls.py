@@ -22,6 +22,9 @@ from deploy import views as dviews
 from userperm import views as uviews
 from asset import views as aviews
 from monitor import views as monitor_views
+from program_manage import views as program_views
+from logger_manage import views as logger_views
+from vpn_manage import views as vpn_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -76,5 +79,13 @@ urlpatterns = [
     url(r'^asset/idc/edit/(?P<aid>\d+)/(?P<action>[\w-]+)/$', aviews.idc_asset_manage, name='idc_manage'),
     url(r'^asset/load_city/$', aviews.geo_input, name='load_city'),
     url(r'^monitor/control_board/$',monitor_views.control_board,name='control_board'),
+    url(r'^program_manage/list/$',program_views.program_list,name='program_list'),
+    url(r'^program_manage/edit/(?P<id>\d+)/$',program_views.program_edit,name='program_edit'),
+    url(r'^program_manage/delete/(?P<id>\d+)/$',program_views.program_delete,name='program_delete'),
+    url(r'^logger_manage/show_logger/(?P<id>\d+)/$',logger_views.show_logger,name='show_logger'),
+    url(r'^vpn_manage/edit/$',vpn_views.edit,name='vpn_edit'),
+    url(r'^vpn_manage/list/$',vpn_views.list,name='vpn_list'),
+    url(r'^vpn_manage/add/$',vpn_views.edit,name='vpn_add'),
+    url(r'^vpn_manage/delete/$',vpn_views.delete,name='vpn_delete'),
 
 ]

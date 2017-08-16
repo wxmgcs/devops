@@ -15,7 +15,40 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>程序列表</h2>
+                        <h2>
+                            <button type="button" class="btn btn-primary ng-binding" data-target="#myModal" data-toggle="modal">添加</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">新建程序</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <fieldset>
+                                                    <div class="form-group" ng-if="inputType == 'text' || inputType == undefined" class="form-group ng-scope">
+                                                        <input type="text" class="form-control console-searchbar-textinput ng-pristine ng-valid"
+                                                               placeholder="程序编号"  ng-model="searchForm.searchText" name="new_program_name">
+                                                    </div>
+                                                    <br/><br/>
+                                                    <button type="submit" class="btn btn-primary ng-binding">添加</button>
+
+                                                </fieldset>
+                                            </form>
+
+                                        </div>
+                                        <!--<div class="modal-footer">-->
+                                            <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                                            <!--<button type="submit" class="btn btn-primary" data-dismiss="modal">保存</button>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            程序列表</h2>
                         <!--<ul class="nav navbar-right panel_toolbox">-->
                             <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
                             <!--</li>-->
@@ -32,8 +65,11 @@
                             <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
                             <!--</li>-->
                         <!--</ul>-->
+
                         <div class="clearfix"></div>
                     </div>
+
+
                     <div class="pull-left">
                         <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
                             {% csrf_token %}
@@ -51,6 +87,7 @@
                                            placeholder="搜索"  ng-model="searchForm.searchText" name="search_text">
                                 </div>
                                 <button type="submit" class="btn btn-primary ng-binding">搜索</button>
+
                             </fieldset>
                         </form>
                     </div>
@@ -77,7 +114,7 @@
                                 <tr id="{{ program.pk }}">
                                     <td><input class="icheck" type="checkbox" value="{{ program.pk }}" name="id"></td>
                                     <!--<td><a href="{% url 'server_info' %}?aid={{ program.pk }}"><i class="fa fa-envelope"></a></td>-->
-                                    <td>{{ program.id }}</td>
+                                    <td>{{ program.program_id }}</td>
                                     {% if program.status %}
                                     <td>{{ "运行中" }}</td>
                                     {% else %}
@@ -91,8 +128,8 @@
                                     {% else %}
                                     <td>{{ "核单" }}</td>
                                     {% endif %}
-                                    <td>{{ program.vpn_number }}</td>
-                                    <td>{{ program.ip }}</td>
+                                    <td>{{ program.vpn_code }}</td>
+                                    <td>{{ program.ip_addr }}</td>
                                     {% if program.os_type == 1 %}
                                     <td>{{ "windows" }}</td>
                                     {% else %}
@@ -109,17 +146,16 @@
                                                     <!--</button>-->
                                                     <li><a href="#" data-target="#myModalLabel" data-toggle="modal" type="button">程序管理</a>
                                                     </li>
-                                                    <li><a href="#">日志管理</a>
-                                                    </li>
-                                                    <li><a href="#">修改信息</a>
+                                                    <li><a href="/logger_manage/show_logger/{{program.id}}/">日志管理</a>
+                                                    <!--</li>-->
+                                                    <li><a href="/program_manage/edit/{{program.id}}/">修改信息</a>
                                                     </li>
                                                     <li><a href="#">监控</a>
                                                     </li>
-                                                    <li><a href="#">远程命令</a>
+                                                    <li><a href="/deploy/remote_execution/">远程命令</a>
                                                     </li>
-                                                    <li><a onclick="#myModalLabel">删除</a>
+                                                    <li><a href="/program_manage/delete/{{program.id}}/">删除</a>
                                                     </li>
-
                                                 </ul>
                                             </li>
                                         </ul>
@@ -135,32 +171,8 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div><script src="/static/js/salt_result.js"></script>
+
+<script src="/static/js/salt_result.js"></script>
 <script>
 /* 全选/反选
    formName所在form的name值
@@ -207,6 +219,11 @@ function do_action(){
     if(!checkAll("formName","id")){
         alert("请至少选择一项！");
     }
+}
+
+function del_program(programid){
+    alert("del program")
+
 }
 
 
