@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
+
 {% block css %}
 <!-- iCheck -->
 <link href="/static/css/green.css" rel="stylesheet">
+<link href="/static/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 {% endblock %}
+
 {% block content %}
 <div class="right_col" role="main">
     <div class="">
@@ -12,51 +17,87 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>{{ page_name }}<small>|&nbsp;<a href="{% url 'show_logger' %}">日志管理</a></small></h2>
+                        <h2>{{ page_name }}<small>|&nbsp;<a href="{% url 'logger_list' %}">日志管理</a></small></h2>
                         <ul class="nav navbar-right panel_toolbox">
-                            <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
-                            <!--</li>-->
-                            <!--<li class="dropdown">-->
-                                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
-                                <!--<ul class="dropdown-menu" role="menu">-->
-                                    <!--<li><a href="#">Settings 1</a>-->
-                                    <!--</li>-->
-                                    <!--<li><a href="#">Settings 2</a>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
-                            <!--</li>-->
                             <li><a class="close-link"><i class="fa fa-close"></i></a>
                             </li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
+
+                    <div class="pull-left">
+
+                        <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <fieldset>
+                                <div class="form-group">
+
+                                    <select class="form-control ng-pristine ng-valid" name="host" ng-model="selectItem" ng-options="d.text for d in dimensions">
+                                        {% if hostname == ''  or hostname == '0' %}
+                                        <option value="0" selected="selected">请选择主机名</option>
+                                        {% else %}
+                                        <option value="{{hostname}}" selected="selected">{{hostname}}</option>
+                                        {% endif %}
+
+                                        {% for m in all_minions %}
+                                        <lable>{{m.nodename}}</lable>
+                                        <option value="{{m.hostname}}">{{m.hostname}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <select class="form-control ng-pristine ng-valid" name="program_id" ng-model="selectItem" ng-options="d.text for d in dimensions">
+                                        {% if program_id == '0' or program_id == '' %}
+                                        <option value="0" selected="selected">请选择程序名</option>
+                                        {% else %}
+                                        <option value="{{program_id}}" selected="selected">{{program_id}}</option>
+                                        {% endif %}
+
+                                        {% for program in programs %}
+                                        <option value="{{program.program_id}}">{{program.program_id}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
+                                        <input size="15" type="text" readonly name="start_time" value="{{start_time}}">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                    </div>
+                                    <!--<input type="hidden" id="dtp_input1" value="" /><br/>-->
+                                </div>
+                                <label>~</label>
+                                <div class="form-group">
+                                    <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
+                                        <input size="15" type="text" readonly name="end_time" value="{{end_time}}">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                    </div>
+                                    <!--<input type="hidden" id="dtp_input1" value="" /><br/>-->
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control ng-pristine ng-valid" name="lines" ng-model="selectItem" ng-options="d.text for d in dimensions">
+                                        <option value="0" selected="selected">全部</option>
+                                        <option value="1">10</option>
+                                        <option value="2">50</option>
+                                        <option value="3">100</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary ng-binding">{{ query_button }}</button>
+
+                            </fieldset>
+                        </form>
+                    </div>
                     <div class="x_content">
 
-                        <form class="form-horizontal form-border" method="post" action="" enctype="multipart/form-data">
-                            {% csrf_token %}
-
-                            {% for i in form %}
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ i.label_tag }} <span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12 inradio">
-                                    {{ i }}
-                                    {{ i.errors }}
-                                </div>
+                        <div class="item form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-20">
+                                <textarea class="form-control" name="result" rows="10">{{ log_content }}</textarea>
                             </div>
-                            {% endfor %}
-                            <div class="ln_solid"></div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-3">
-                                    {% ifequal action 'add' %}
-                                    <button id="send" type="submit" class="btn btn-success">添加</button>
-                                    {% endifequal %}
-                                    {% ifequal action 'edit' %}
-                                    <button id="send" type="submit" class="btn btn-primary ng-binding">更新</button>
-                                    {% endifequal %}
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,6 +127,24 @@ $(document).ready(function() {
 width: 'auto'
 });
         });
+
+</script>
+<script type="text/javascript" src="/static/js/jquery.min.js" charset="UTF-8"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1,
+        defaultDate : new Date()
+    });
 </script>
 <!-- /jQuery Tags Input -->
 {% endblock %}

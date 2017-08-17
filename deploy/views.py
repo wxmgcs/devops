@@ -1329,3 +1329,6 @@ def project_deploy(request):
         return redirect(project_list)
     else:
         raise Http404
+
+def page_test(request):
+    return render(request,"page_test.html")

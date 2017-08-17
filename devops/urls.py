@@ -82,10 +82,12 @@ urlpatterns = [
     url(r'^program_manage/list/$',program_views.program_list,name='program_list'),
     url(r'^program_manage/edit/(?P<id>\d+)/$',program_views.program_edit,name='program_edit'),
     url(r'^program_manage/delete/(?P<id>\d+)/$',program_views.program_delete,name='program_delete'),
+    url(r'^logger_manage/logger_list/$',logger_views.list,name='logger_list'),
     url(r'^logger_manage/show_logger/(?P<id>\d+)/$',logger_views.show_logger,name='show_logger'),
     url(r'^vpn_manage/edit/$',vpn_views.edit,name='vpn_edit'),
     url(r'^vpn_manage/list/$',vpn_views.list,name='vpn_list'),
     url(r'^vpn_manage/add/$',vpn_views.edit,name='vpn_add'),
     url(r'^vpn_manage/delete/$',vpn_views.delete,name='vpn_delete'),
+    url(r'^deploy/page_test$',dviews.page_test,name='page_test'),
 
 ]
