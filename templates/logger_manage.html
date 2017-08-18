@@ -6,6 +6,8 @@
 <link href="/static/css/dataTables.bootstrap.min.css" rel="stylesheet">
 <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+<script src="/static/js/jquery.cascadeselect.js" type="text/javascript"></script>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +19,8 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>{{ page_name }}<small>|&nbsp;<a href="{% url 'logger_list' %}">日志管理</a></small></h2>
+                        <h2>{{ page_name }}
+                        </h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="close-link"><i class="fa fa-close"></i></a>
                             </li>
@@ -27,13 +30,15 @@
 
                     <div class="pull-left">
 
-                        <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
+                        <form class="form-inline ng-pristine ng-valid" method="post" action=""
+                              enctype="multipart/form-data" name="query_logger_form">
                             {% csrf_token %}
                             <fieldset>
                                 <div class="form-group">
 
-                                    <select class="form-control ng-pristine ng-valid" name="host" ng-model="selectItem" ng-options="d.text for d in dimensions">
-                                        {% if hostname == ''  or hostname == '0' %}
+                                    <select class="form-control ng-pristine ng-valid" name="host" ng-model="selectItem"
+                                            ng-options="d.text for d in dimensions" id="hostname" onChange="change()">
+                                        {% if hostname == '' or hostname == '0' %}
                                         <option value="0" selected="selected">请选择主机名</option>
                                         {% else %}
                                         <option value="{{hostname}}" selected="selected">{{hostname}}</option>
@@ -48,7 +53,8 @@
 
                                 <div class="form-group">
 
-                                    <select class="form-control ng-pristine ng-valid" name="program_id" ng-model="selectItem" ng-options="d.text for d in dimensions">
+                                    <select class="form-control ng-pristine ng-valid" name="program_id"
+                                            ng-model="selectItem" ng-options="d.text for d in dimensions" id="program_id">
                                         {% if program_id == '0' or program_id == '' %}
                                         <option value="0" selected="selected">请选择程序名</option>
                                         {% else %}
@@ -62,7 +68,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
+                                    <div class="controls input-append date form_datetime"
+                                         data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
                                         <input size="15" type="text" readonly name="start_time" value="{{start_time}}">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
@@ -71,7 +78,8 @@
                                 </div>
                                 <label>~</label>
                                 <div class="form-group">
-                                    <div class="controls input-append date form_datetime" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
+                                    <div class="controls input-append date form_datetime"
+                                         data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
                                         <input size="15" type="text" readonly name="end_time" value="{{end_time}}">
                                         <span class="add-on"><i class="icon-remove"></i></span>
                                         <span class="add-on"><i class="icon-th"></i></span>
@@ -79,14 +87,17 @@
                                     <!--<input type="hidden" id="dtp_input1" value="" /><br/>-->
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control ng-pristine ng-valid" name="lines" ng-model="selectItem" ng-options="d.text for d in dimensions">
-                                        <option value="0" selected="selected">全部</option>
-                                        <option value="1">10</option>
-                                        <option value="2">50</option>
-                                        <option value="3">100</option>
+                                    <select class="form-control ng-pristine ng-valid" name="lines" ng-model="selectItem"
+                                            ng-options="d.text for d in dimensions">
+                                        <option value="0">全部</option>
+                                        <option value="10" selected="selected">10</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary ng-binding">{{ query_button }}</button>
+                                <button type="submit" class="btn btn-primary ng-binding"
+                                        id="query"/>
+                                {{ query_button }}</button>
 
                             </fieldset>
                         </form>
@@ -94,16 +105,34 @@
                     <div class="x_content">
 
                         <div class="item form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-20">
-                                <textarea class="form-control" name="result" rows="10">{{ log_content }}</textarea>
-                            </div>
+                            <!--<div class="col-md-6 col-sm-6 col-xs-20">-->
+                                <pre class="form-control" >{{ log_content }}</pre>
+                            <!--</div>-->
                         </div>
+                        <!--<div class="item form-group">-->
+                            <!--<h2> 省级联动</h2>-->
+                            <!--<div class="city" >-->
+                                <!--<select id="SelProvince" class="select"></select>-->
+                                <!--<select id="SelCity" class="select"></select>-->
+                                <!--<select id="SelArea" class="select"></select>-->
+                                <!--<select id="SelXian" class="select"></select>-->
+                            <!--</div>-->
+
+                            <!--<h2> 市区联动</h2>-->
+                            <!--<div class="city" >-->
+                                <!--<select id="Select1" class="select"></select>-->
+                                <!--<select id="Select2" class="select"></select>-->
+                                <!--<select id="Select3" class="select"></select>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 {% endblock %}
 
 {% block js %}
@@ -128,6 +157,7 @@ width: 'auto'
 });
         });
 
+
 </script>
 <script type="text/javascript" src="/static/js/jquery.min.js" charset="UTF-8"></script>
 <script src="/static/js/bootstrap.js"></script>
@@ -145,6 +175,33 @@ width: 'auto'
         showMeridian: 1,
         defaultDate : new Date()
     });
+
 </script>
+
+
+<!--<script type="text/javascript">-->
+       <!--$(document).ready(function () {-->
+
+            <!--$.fn.CascadeSelect({-->
+                <!--url: '/CascadeSelect/CascadeSelect.ashx',  //返回Json数据的一般处理文件-->
+                <!--idKey: 'Id',     // 绑定下拉框实际值的字段-->
+                <!--nameKey: 'Name', // 绑定下拉框显示值的字段-->
+                <!--casTopId: 0,  // 顶级节点ParentId-->
+                <!--casCount: 4,  // 级联个数-->
+                <!--casObjId: ['SelProvince', 'SelCity', 'SelArea', 'SelXian'], // 级联下拉框id-->
+                <!--casDefVal: ['全国', 5, '益阳', 22], // 级联默认值(Id,Name都可以)-->
+            <!--});-->
+
+              <!--$.fn.CascadeSelect({-->
+                <!--url: '/CascadeSelect/CascadeSelect.ashx',  //返回Json数据的一般处理文件-->
+                <!--idKey: 'Id',   // 绑定下拉框实际值的字段-->
+                <!--nameKey: 'Name', // 绑定下拉框显示值的字段-->
+                <!--casTopId: 1,  // 顶级节点ParentId-->
+                <!--casCount: 3, // 级联个数-->
+                <!--casObjId: ['Select1', 'Select2', 'Select3'], // 级联下拉框id-->
+                <!--casDefVal: [5, '益阳', 22], // 级联默认值(Id,Name都可以)-->
+            <!--});-->
+        <!--});-->
+     <!--</script>-->
 <!-- /jQuery Tags Input -->
 {% endblock %}

@@ -18,9 +18,43 @@ def get_datetime():
 def get_datetime_passed(day,minutes):
     return (datetime.datetime.now() - datetime.timedelta(days = day,minutes = minutes)).strftime("%Y-%m-%d %H:%M")
 
+# return Windows || CentOS
+def get_os_type(saltapi,nodename):
+    if nodename == '0':
+        return None
+    ret = saltapi.remote_localexec(nodename,"grains.item","os","list")
+    return ret[nodename]['os']
+
+
+def get_project_dir(os_type):
+    if os_type == "Windows":
+        return settings.PROJECT_UNICOMRECHARGE['projectdir_windows']
+    elif os_type == "CentOS":
+        return  settings.PROJECT_UNICOMRECHARGE['projectdir_linux']
+    return None
+
+def get_salt_dir(os_type):
+    if os_type == "Windows":
+        return settings.PROJECT_UNICOMRECHARGE['saltdir_windows']
+    elif os_type == "CentOS":
+        return settings.PROJECT_UNICOMRECHARGE['saltdir_linux']
+
+def format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines):
+    return "cd %s & python %s/logger.py -c cat_log -eid %s -st %s -et %s -l %s"%(saltdir,projectdir,program_id,start_time,end_time,lines)
+
+
+def format_loggerresult(result):
+    logger = {}
+    for key in result.keys():
+        logger = result.get(key)
+    return logger
+
+
+
+
 
 def get_log(hostname,program_id,start_time,end_time,lines):
-    print (hostname,program_id,start_time,end_time,lines)
+    ret = []
 
     sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
 
@@ -29,17 +63,41 @@ def get_log(hostname,program_id,start_time,end_time,lines):
         tgt = '*'
 
     fun = "cmd.run"
+    expr_form = "list"
 
-    projectdir = settings.PROJECT_UNICOMRECHARGE['projectdir_windows']
-    saltdir_windows = settings.PROJECT_UNICOMRECHARGE['saltdir_windows']
+    os_type  = get_os_type(sapi,hostname)
+    start_time = "\""+start_time+"\""
+    end_time = "\""+end_time+"\""
 
-    arg = "cd %s & python %s\\manage.py cat_log %s start_time=%s end_time=%s lines=%s"%(saltdir_windows,projectdir,program_id,start_time,end_time,lines)
-    expr_form = ""
+    if os_type is not None:
+        # 查询全部的日志
+        projectdir = get_project_dir(os_type)
+        saltdir = get_salt_dir(os_type)
 
-    ret = sapi.remote_localexec(tgt,fun,arg,expr_form)
-    if ret == {}:
-        ret = "没有查询到结果"
+        arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
+        result = sapi.remote_localexec(tgt,fun,arg,expr_form)
+        result = format_loggerresult(result)
+        ret.append(result)
+    else:
+        # windows
+        tgt = "-G os:Windows"
+        saltdir = settings.PROJECT_UNICOMRECHARGE['saltdir_windows']
+        projectdir = settings.PROJECT_UNICOMRECHARGE['projectdir_windows']
 
+        arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
+        ret.append(sapi.remote_localexec(tgt,fun,arg,expr_form))
+
+        tgt = "-G os:CentOS"
+        saltdir = settings.PROJECT_UNICOMRECHARGE['saltdir_linux']
+        projectdir = settings.PROJECT_UNICOMRECHARGE['projectdir_linux']
+        arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
+        ret.append(sapi.remote_localexec(tgt,fun,arg,expr_form))
+
+
+    if ret == []:
+        ret = "没有查询到结果"+get_datetime()
+
+    ret = "\n".join(ret)
     return ret
 
 def list(request):

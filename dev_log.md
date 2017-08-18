@@ -102,3 +102,59 @@ Set-Cookie: session_id=f65948d2ea5edc7ce0177872c28cd00dac346b02; expires=Tue, 15
 
 {"return": [{"test1.51du.cn": true}]}[root@iZ25lx34hhyZ certs]# 
 
+### 怎样从不同的操作系统的不同目录查询到实时日志
+
+
+调试 salt-master salt-minion
+salt-master --log-level=debug
+salt-minion --log-level=debug
+
+
+执行sls命令
+master上执行
+```
+salt my_testserver state.apply
+```
+类似于在my_testserver上执行
+```
+salt-call state.apply
+```
+minion 测试执行,并不会有效果
+```
+salt-call state.apply --local
+```
+
+
+查看日志
+ cat /var/log/salt/master
+ 
+ 
+external_auth:
+   pam:
+ thatch:
+ - '@wheel' # to allow access to all wheel modules
+ - '@runner' # to allow access to all runner modules
+ - '@jobs' # to allow access to the jobs runner and/or wheel module
+
+
+spm 包管理
+
+pillar 保存的key: value
+eg:
+
+
+重启minion
+salt -G kernel:Windows cmd.run_bg 'C:\salt\salt-call.bat --local service.restart salt-  →minion'
+
+
+
+
+
+
+
+
+
+
+
+The cp.get_file function can be used on the minion to download a file from the master, the syntax looks like this:
+# salt '*' cp.get_file salt://vimrc /etc/vimrc
