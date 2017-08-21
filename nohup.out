@@ -1,0 +1,1108 @@
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[11/Jul/2017 19:49:04] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[11/Jul/2017 19:49:04] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:04] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:04] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:04] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[11/Jul/2017 19:49:05] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[11/Jul/2017 19:49:06] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[11/Jul/2017 19:49:06] "GET / HTTP/1.1" 200 13998
+[11/Jul/2017 19:49:06] "GET /static/js/jquery.min.js HTTP/1.1" 200 84280
+[11/Jul/2017 19:49:06] "GET /static/js/custom.min.js HTTP/1.1" 200 4386
+[11/Jul/2017 19:49:06] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 29110
+[11/Jul/2017 19:49:06] "GET /static/img/avatar2.jpg HTTP/1.1" 200 25720
+[11/Jul/2017 19:49:15] "GET /userauth/user/list/ HTTP/1.1" 200 21377
+[11/Jul/2017 19:49:15] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 200 4248
+[11/Jul/2017 19:49:15] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 200 82481
+[11/Jul/2017 19:49:15] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 200 1961
+[11/Jul/2017 19:49:15] "GET /static/js/display_select.js HTTP/1.1" 200 438
+[11/Jul/2017 19:49:15] "GET /static/img/loading.gif HTTP/1.1" 200 30269
+[11/Jul/2017 19:49:19] "GET /user_perm/exec/ HTTP/1.1" 200 13685
+[11/Jul/2017 19:49:25] "GET /userauth/user/list/ HTTP/1.1" 200 21377
+[11/Jul/2017 19:49:33] "GET /accounts/logout/ HTTP/1.1" 302 0
+[11/Jul/2017 19:49:33] "GET / HTTP/1.1" 302 0
+[11/Jul/2017 19:49:33] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[11/Jul/2017 19:49:33] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:33] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[11/Jul/2017 19:49:33] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:33] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:38] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[11/Jul/2017 19:49:38] "GET / HTTP/1.1" 200 13998
+[11/Jul/2017 19:49:38] "GET /static/img/avatar2.jpg HTTP/1.1" 304 0
+[11/Jul/2017 19:49:39] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[11/Jul/2017 19:49:39] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:49:39] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:49:39] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:49:44] "GET /userauth/group/list/ HTTP/1.1" 200 14760
+[11/Jul/2017 19:49:46] "GET /userauth/user/list/ HTTP/1.1" 200 21377
+[11/Jul/2017 19:49:46] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:49:46] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:49:46] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:49:46] "GET /static/js/display_select.js HTTP/1.1" 304 0
+[11/Jul/2017 19:49:46] "GET /static/img/loading.gif HTTP/1.1" 304 0
+[11/Jul/2017 19:49:47] "GET /userauth/user/add/ HTTP/1.1" 200 28085
+[11/Jul/2017 19:49:47] "GET /static/js/validator.min.js HTTP/1.1" 200 5955
+[11/Jul/2017 19:49:47] "GET /static/js/multiselect.min.js HTTP/1.1" 200 9134
+[11/Jul/2017 19:50:49] "POST /userauth/user/add/ HTTP/1.1" 302 0
+[11/Jul/2017 19:50:49] "GET /userauth/user/list/ HTTP/1.1" 200 27528
+[11/Jul/2017 19:50:49] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/img/avatar2.jpg HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/js/display_select.js HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[11/Jul/2017 19:50:49] "GET /static/img/loading.gif HTTP/1.1" 304 0
+[11/Jul/2017 19:51:03] "GET /accounts/logout/ HTTP/1.1" 302 0
+[11/Jul/2017 19:51:03] "GET / HTTP/1.1" 302 0
+[11/Jul/2017 19:51:03] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[11/Jul/2017 19:51:03] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[11/Jul/2017 19:51:14] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[11/Jul/2017 19:51:14] "GET / HTTP/1.1" 200 7491
+[11/Jul/2017 19:51:17] "GET / HTTP/1.1" 200 7491
+[11/Jul/2017 19:51:28] "GET /accounts/logout/ HTTP/1.1" 302 0
+[11/Jul/2017 19:51:28] "GET / HTTP/1.1" 302 0
+[11/Jul/2017 19:51:28] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[11/Jul/2017 19:51:28] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:51:28] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[11/Jul/2017 19:51:28] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:51:28] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[11/Jul/2017 19:51:28] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[11/Jul/2017 19:51:33] "POST /accounts/login/?next=/ HTTP/1.1" 200 2068
+[11/Jul/2017 19:51:33] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[11/Jul/2017 19:51:39] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[11/Jul/2017 19:51:39] "GET / HTTP/1.1" 200 13998
+[11/Jul/2017 19:51:39] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:51:39] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:51:39] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[11/Jul/2017 19:51:39] "GET /static/img/avatar2.jpg HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET / HTTP/1.1" 200 13998
+[12/Jul/2017 08:40:54] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/img/avatar2.jpg HTTP/1.1" 304 0
+[12/Jul/2017 08:40:54] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2017 - 19:49:02
+Django version 1.9, using settings 'soms.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[12/Jul/2017 08:50:58] "GET / HTTP/1.1" 200 13998
+[12/Jul/2017 08:51:01] "GET /accounts/logout/ HTTP/1.1" 302 0
+[12/Jul/2017 08:51:01] "GET / HTTP/1.1" 302 0
+[12/Jul/2017 08:51:01] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[12/Jul/2017 08:51:01] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[12/Jul/2017 08:51:03] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[12/Jul/2017 08:51:03] "GET / HTTP/1.1" 200 13998
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 12, 2017 - 08:50:48
+Django version 1.9, using settings 'soms.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[12/Jul/2017 09:01:31] "GET / HTTP/1.1" 200 13998
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[12/Jul/2017 09:20:06] "GET / HTTP/1.1" 200 13998
+[12/Jul/2017 09:20:08] "GET / HTTP/1.1" 200 13998
+[12/Jul/2017 09:31:53] "GET / HTTP/1.1" 200 14002
+[12/Jul/2017 09:32:06] "GET / HTTP/1.1" 200 14002
+[12/Jul/2017 09:35:18] "GET / HTTP/1.1" 200 14002
+[12/Jul/2017 09:35:28] "GET /deploy/remote_execution/ HTTP/1.1" 200 22936
+[12/Jul/2017 09:35:28] "GET /static/css/green.css HTTP/1.1" 200 1411
+[12/Jul/2017 09:35:28] "GET /static/css/bootstrapValidator.min.css HTTP/1.1" 200 244
+[12/Jul/2017 09:35:28] "GET /static/js/icheck.min.js HTTP/1.1" 200 4959
+[12/Jul/2017 09:35:28] "GET /static/js/bootstrap-modal-vertical.js HTTP/1.1" 200 727
+[12/Jul/2017 09:35:28] "GET /static/js/csrf.js HTTP/1.1" 200 972
+[12/Jul/2017 09:35:28] "GET /static/js/salt_result.js HTTP/1.1" 200 7026
+[12/Jul/2017 09:35:28] "GET /static/img/loading.gif HTTP/1.1" 304 0
+[12/Jul/2017 09:36:02] "GET /deploy/key_list/ HTTP/1.1" 200 16274
+[12/Jul/2017 09:36:02] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[12/Jul/2017 09:36:02] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[12/Jul/2017 09:36:02] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[12/Jul/2017 09:36:02] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[12/Jul/2017 09:36:02] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+Internal Server Error: /deploy/key_list_import/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/deploy/views.py", line 398, in salt_key_import
+    minions,minions_pre = sapi.list_all_key()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 51, in list_all_key
+    self.token_id()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 30, in token_id
+    content = self.postRequest(obj,prefix='/login')
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 40, in postRequest
+    opener = urllib2.urlopen(req)
+  File "/usr/lib64/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib64/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.7/urllib2.py", line 1258, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib64/python2.7/urllib2.py", line 1214, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 113] No route to host>
+[12/Jul/2017 09:36:04] "GET /deploy/key_list_import/ HTTP/1.1" 500 108237
+[12/Jul/2017 09:37:06] "GET /asset/server_info/ HTTP/1.1" 200 17099
+[12/Jul/2017 09:37:06] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[12/Jul/2017 09:37:06] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[12/Jul/2017 09:37:13] "GET /deploy/key_list/ HTTP/1.1" 200 16274
+[12/Jul/2017 09:37:13] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[12/Jul/2017 09:37:13] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+Internal Server Error: /deploy/key_list_import/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/deploy/views.py", line 398, in salt_key_import
+    minions,minions_pre = sapi.list_all_key()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 51, in list_all_key
+    self.token_id()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 30, in token_id
+    content = self.postRequest(obj,prefix='/login')
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 40, in postRequest
+    opener = urllib2.urlopen(req)
+  File "/usr/lib64/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib64/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.7/urllib2.py", line 1258, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib64/python2.7/urllib2.py", line 1214, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 113] No route to host>
+[12/Jul/2017 09:38:48] "GET /deploy/key_list_import/ HTTP/1.1" 500 108237
+[14/Jul/2017 06:24:09] "GET / HTTP/1.0" 302 0
+Not Found: /ibm/console/logon.jsp
+[14/Jul/2017 06:24:11] "GET /ibm/console/logon.jsp?action=OK HTTP/1.1" 404 10997
+Not Found: /translate.js
+[14/Jul/2017 06:24:11] "GET /translate.js HTTP/1.1" 404 10960
+Not Found: /Portal/Portal.mwsl
+[14/Jul/2017 06:24:11] "GET /Portal/Portal.mwsl HTTP/1.1" 404 10978
+[14/Jul/2017 06:24:11] "GET / HTTP/1.1" 302 0
+[14/Jul/2017 06:24:11] "GET / HTTP/1.0" 302 0
+Not Found: /CSS/Miniweb.css
+[14/Jul/2017 06:24:11] "GET /CSS/Miniweb.css HTTP/1.1" 404 10969
+[14/Jul/2017 06:24:11] "GET / HTTP/1.1" 302 0
+Not Found: /docs/cplugError.html/
+[14/Jul/2017 06:24:11] "GET /docs/cplugError.html/ HTTP/1.1" 404 10987
+Not Found: /console/
+[14/Jul/2017 06:24:11] "GET /console/ HTTP/1.1" 404 10948
+[14/Jul/2017 06:24:11] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[14/Jul/2017 06:24:12] "HEAD / HTTP/1.1" 302 0
+[14/Jul/2017 06:24:12] "HEAD /accounts/login/?next=/ HTTP/1.1" 200 0
+[14/Jul/2017 06:24:12] "GET / HTTP/1.1" 302 0
+[14/Jul/2017 06:24:12] code 400, message Bad request syntax ('\x80\xf1\x01\x03\x03\x00\xd8\x00\x00\x00\x10\x00\x00\x05\x00\x00\x04\x01\x00\x80\x00\x00\x02\x00\x00\x01\x00\x00\x16\x00\x003\x00\x009\x00\x00:\x00\x00\x18\x00\x005\x00\x00')
+[14/Jul/2017 06:24:12] 
+[14/Jul/2017 06:24:12] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\x9f\xed\xb8\xbc\x1a\x95\x85b\xc7m\xf8M\x95\xe4\xea')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2017 06:24:12] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[14/Jul/2017 06:24:21] code 400, message Bad request syntax ('\x80\xf1\x01\x03\x03\x00\xd8\x00\x00\x00\x10\x00\x00\x05\x00\x00\x04\x01\x00\x80\x00\x00\x02\x00\x00\x01\x00\x00\x16\x00\x003\x00\x009\x00\x00:\x00\x00\x18\x00\x005\x00\x00')
+[14/Jul/2017 06:24:21] 
+[14/Jul/2017 06:24:21] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\xef\x1bJ\xfe\x9c\xc4+\xf9\xbb\xef\x14\xeao\xac\xc4\x081\x9ek\xf1\xfbw\x01\x1dS\xb3\xe8\x88\xa7iR\x00\x00\x00\xda\x00\x05\x00\x04\x00\x02\x00\x01\x00\x16\x003\x009\x00:\x00\x18\x005\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2017 18:59:12] "GET / HTTP/1.1" 200 14002
+[14/Jul/2017 18:59:12] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/img/avatar2.jpg HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[14/Jul/2017 18:59:12] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[14/Jul/2017 18:59:36] "GET /admin/ HTTP/1.1" 200 3011
+[14/Jul/2017 18:59:36] "GET /static/admin/css/base.css HTTP/1.1" 200 15897
+[14/Jul/2017 18:59:36] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 434
+[14/Jul/2017 18:59:36] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[14/Jul/2017 18:59:36] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[14/Jul/2017 18:59:36] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[14/Jul/2017 18:59:36] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[14/Jul/2017 18:59:36] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[14/Jul/2017 18:59:36] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[14/Jul/2017 18:59:43] "GET /deploy/task_list/ HTTP/1.1" 200 15307
+[14/Jul/2017 18:59:44] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[14/Jul/2017 18:59:44] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[14/Jul/2017 18:59:44] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[14/Jul/2017 18:59:44] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[14/Jul/2017 18:59:44] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[14/Jul/2017 18:59:48] "GET / HTTP/1.1" 200 14002
+[14/Jul/2017 19:13:41] "GET / HTTP/1.1" 302 0
+[14/Jul/2017 19:13:42] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[14/Jul/2017 19:13:44] "GET /accounts/login/?next=/ HTTP/1.1" 200 2020
+[14/Jul/2017 19:13:44] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[14/Jul/2017 19:13:44] "GET / HTTP/1.1" 200 14002
+[21/Jul/2017 15:34:08] "GET / HTTP/1.1" 302 0
+[21/Jul/2017 15:34:08] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[21/Jul/2017 15:34:10] "GET /accounts/login/?next=/ HTTP/1.1" 200 2020
+[21/Jul/2017 15:34:10] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[21/Jul/2017 15:34:10] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[21/Jul/2017 15:34:10] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[21/Jul/2017 15:34:10] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[21/Jul/2017 15:34:11] "GET / HTTP/1.1" 200 14002
+[21/Jul/2017 15:34:11] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[21/Jul/2017 15:34:11] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[21/Jul/2017 15:34:11] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[21/Jul/2017 15:34:11] "GET /favicon.ico HTTP/1.1" 404 10961
+[21/Jul/2017 15:34:11] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[21/Jul/2017 15:34:11] "GET /static/img/avatar2.jpg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[21/Jul/2017 15:34:12] "GET /favicon.ico HTTP/1.1" 404 10961
+[21/Jul/2017 15:34:15] "GET /deploy/key_list/ HTTP/1.1" 200 16274
+[21/Jul/2017 15:34:15] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[21/Jul/2017 15:34:15] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[21/Jul/2017 15:34:15] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[21/Jul/2017 15:34:15] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[21/Jul/2017 15:34:16] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+Not Found: /login.action
+[26/Jul/2017 02:58:45] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:06] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:07] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:07] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:08] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:08] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:08] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:09] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:12] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:18] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:25] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:25] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:25] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:27] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:30] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:31] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:31] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:33] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 02:59:34] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 03:00:38] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:46] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:47] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:47] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:47] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:47] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:48] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /login.action
+[26/Jul/2017 07:32:49] "POST /login.action HTTP/1.1" 404 10966
+Not Found: /phpMyAdmin/index.php
+[26/Jul/2017 08:12:19] "GET /phpMyAdmin/index.php HTTP/1.1" 404 10989
+[28/Jul/2017 15:47:13] "GET / HTTP/1.0" 302 0
+Not Found: /Portal/Portal.mwsl
+[28/Jul/2017 15:47:20] "GET /Portal/Portal.mwsl HTTP/1.1" 404 10978
+[28/Jul/2017 15:47:20] "GET / HTTP/1.1" 302 0
+[28/Jul/2017 15:47:20] "GET / HTTP/1.0" 302 0
+Not Found: /translate.js
+Not Found: /ibm/console/logon.jsp
+[28/Jul/2017 15:47:20] "GET /ibm/console/logon.jsp?action=OK HTTP/1.1" 404 10997
+[28/Jul/2017 15:47:20] "GET /translate.js HTTP/1.1" 404 10960
+[28/Jul/2017 15:47:20] "GET / HTTP/1.1" 302 0
+Not Found: /CSS/Miniweb.css
+[28/Jul/2017 15:47:20] "GET /CSS/Miniweb.css HTTP/1.1" 404 10969
+Not Found: /docs/cplugError.html/
+[28/Jul/2017 15:47:20] "GET /docs/cplugError.html/ HTTP/1.1" 404 10987
+Not Found: /console/
+[28/Jul/2017 15:47:20] "GET /console/ HTTP/1.1" 404 10948
+[28/Jul/2017 15:47:20] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+Not Found: /console/portal/0/Welcome
+[28/Jul/2017 15:47:21] "GET /console/portal/0/Welcome HTTP/1.1" 404 10996
+[28/Jul/2017 15:47:21] "HEAD / HTTP/1.1" 302 0
+[28/Jul/2017 15:47:22] "GET / HTTP/1.1" 302 0
+[28/Jul/2017 15:47:22] "HEAD /accounts/login/?next=/ HTTP/1.1" 200 0
+[28/Jul/2017 15:47:22] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[28/Jul/2017 15:47:30] code 400, message Bad request syntax ('\x80\xf1\x01\x03\x03\x00\xd8\x00\x00\x00\x10\x00\x00\x05\x00\x00\x04\x01\x00\x80\x00\x00\x02\x00\x00\x01\x00\x00\x16\x00\x003\x00\x009\x00\x00:\x00\x00\x18\x00\x005\x00\x00')
+[28/Jul/2017 15:47:30] 
+[28/Jul/2017 15:47:30] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\xf6\xa0\x8f4o\xec\x07\xe5\xa7\x93\x02_\xa9@\x8b\x86=;\x81u\xc7\xdaN\xdd\xdb\xc3\xab\x1c4"\x89%\x00\x00\xda\x00\x05\x00\x04\x00\x02\x00\x01\x00\x16\x003\x009\x00:\x00\x18\x005\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Aug/2017 17:04:00] "GET / HTTP/1.1" 302 0
+[08/Aug/2017 17:04:01] "GET /accounts/login/?next=/ HTTP/1.1" 200 1976
+[08/Aug/2017 17:04:01] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 20766
+[08/Aug/2017 17:04:01] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[08/Aug/2017 17:04:01] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 99946
+[08/Aug/2017 17:04:01] "GET /static/css/custom.min.css HTTP/1.1" 200 72189
+[08/Aug/2017 17:04:01] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 200 83760
+[08/Aug/2017 17:04:03] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[08/Aug/2017 17:04:03] "GET / HTTP/1.1" 200 14002
+[08/Aug/2017 17:04:03] "GET /static/js/custom.min.js HTTP/1.1" 200 4386
+[08/Aug/2017 17:04:03] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 29110
+[08/Aug/2017 17:04:03] "GET /static/img/avatar2.jpg HTTP/1.1" 200 25720
+[08/Aug/2017 17:04:03] "GET /static/js/jquery.min.js HTTP/1.1" 200 84280
+[08/Aug/2017 17:04:07] "GET /deploy/group_list/ HTTP/1.1" 200 13746
+[08/Aug/2017 17:04:07] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 200 4248
+[08/Aug/2017 17:04:08] "GET /deploy/remote_execution/ HTTP/1.1" 200 22936
+[08/Aug/2017 17:04:08] "GET /static/css/green.css HTTP/1.1" 200 1411
+[08/Aug/2017 17:04:08] "GET /static/css/bootstrapValidator.min.css HTTP/1.1" 200 244
+[08/Aug/2017 17:04:08] "GET /static/js/icheck.min.js HTTP/1.1" 200 4959
+[08/Aug/2017 17:04:08] "GET /static/js/bootstrap-modal-vertical.js HTTP/1.1" 200 727
+[08/Aug/2017 17:04:08] "GET /static/js/csrf.js HTTP/1.1" 200 972
+[08/Aug/2017 17:04:08] "GET /static/js/salt_result.js HTTP/1.1" 200 7026
+[08/Aug/2017 17:04:08] "GET /static/img/loading.gif HTTP/1.1" 200 30269
+[08/Aug/2017 17:04:27] "GET /deploy/task_list/ HTTP/1.1" 200 15307
+[08/Aug/2017 17:04:27] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 200 82481
+[08/Aug/2017 17:04:27] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 200 1961
+[08/Aug/2017 17:04:27] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[08/Aug/2017 17:04:28] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[08/Aug/2017 17:04:34] "GET /deploy/file_manage/download/ HTTP/1.1" 200 19812
+[08/Aug/2017 17:04:37] "GET /deploy/project_list/ HTTP/1.1" 200 19442
+[08/Aug/2017 17:04:37] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[08/Aug/2017 17:04:38] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[08/Aug/2017 17:04:44] "GET /deploy/group_list/ HTTP/1.1" 200 13746
+[08/Aug/2017 17:04:46] "GET /deploy/remote_execution/ HTTP/1.1" 200 22936
+[08/Aug/2017 17:21:57] "GET /deploy/key_list/ HTTP/1.1" 200 16274
+[08/Aug/2017 17:21:57] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[08/Aug/2017 17:21:57] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+Internal Server Error: /deploy/key_list_import/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/deploy/views.py", line 398, in salt_key_import
+    minions,minions_pre = sapi.list_all_key()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 51, in list_all_key
+    self.token_id()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 30, in token_id
+    content = self.postRequest(obj,prefix='/login')
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 40, in postRequest
+    opener = urllib2.urlopen(req)
+  File "/usr/lib64/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib64/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.7/urllib2.py", line 1258, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib64/python2.7/urllib2.py", line 1214, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 113] No route to host>
+[08/Aug/2017 17:22:00] "GET /deploy/key_list_import/ HTTP/1.1" 500 108985
+[09/Aug/2017 16:18:02] "GET / HTTP/1.1" 200 14002
+[09/Aug/2017 16:19:19] "GET /deploy/remote_execution/ HTTP/1.1" 200 22936
+[09/Aug/2017 16:20:26] "GET /deploy/key_list/ HTTP/1.1" 200 16274
+[09/Aug/2017 16:20:26] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[09/Aug/2017 16:20:26] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[09/Aug/2017 16:20:26] "GET /deploy/group_list/ HTTP/1.1" 200 13746
+[09/Aug/2017 16:20:28] "GET /deploy/key_list/ HTTP/1.1" 200 16274
+[09/Aug/2017 16:20:28] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[09/Aug/2017 16:20:28] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[09/Aug/2017 16:20:28] "GET /deploy/group_list/ HTTP/1.1" 200 13746
+[09/Aug/2017 16:20:33] "GET /deploy/task_list/ HTTP/1.1" 200 15307
+[09/Aug/2017 16:20:34] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[09/Aug/2017 16:20:34] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[09/Aug/2017 16:20:45] "GET /deploy/project_list/ HTTP/1.1" 200 19442
+[09/Aug/2017 16:20:45] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[09/Aug/2017 16:20:45] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[09/Aug/2017 16:20:57] "GET /audit/log_audit/ HTTP/1.1" 200 23409
+[09/Aug/2017 16:20:57] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[09/Aug/2017 16:20:57] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 12, 2017 - 09:16:45
+Django version 1.9, using settings 'devops.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[09/Aug/2017 18:30:23] "GET / HTTP/1.1" 200 23092
+[09/Aug/2017 18:37:39] "GET / HTTP/1.1" 200 23204
+[10/Aug/2017 09:37:50] "GET / HTTP/1.1" 200 23204
+[10/Aug/2017 09:38:17] "GET /deploy/key_list/ HTTP/1.1" 200 16297
+[10/Aug/2017 09:38:17] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 09:38:17] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 09:38:19] "GET /deploy/group_list/ HTTP/1.1" 200 13769
+[10/Aug/2017 09:39:00] "GET /deploy/group_list/ HTTP/1.1" 200 13769
+[10/Aug/2017 09:39:10] "GET / HTTP/1.1" 200 23204
+[10/Aug/2017 09:39:17] "GET /deploy/group_list/ HTTP/1.1" 200 13769
+[10/Aug/2017 09:40:39] "GET / HTTP/1.1" 200 23204
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+August 09, 2017 - 18:30:14
+Django version 1.9, using settings 'devops.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[10/Aug/2017 09:43:47] "GET / HTTP/1.1" 200 23389
+[10/Aug/2017 09:43:50] "GET /deploy/program_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 09:43:50] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 09:43:50] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 09:43:52] "GET / HTTP/1.1" 200 23389
+[10/Aug/2017 09:43:54] "GET /deploy/program_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 09:43:54] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 09:43:55] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 09:43:56] "GET /deploy/module_deploy/ HTTP/1.1" 200 25097
+[10/Aug/2017 09:43:58] "GET /deploy/remote_execution/ HTTP/1.1" 200 23144
+[10/Aug/2017 10:30:06] "GET / HTTP/1.0" 302 0
+Not Found: /Portal/Portal.mwsl
+[10/Aug/2017 10:30:13] "GET /Portal/Portal.mwsl HTTP/1.1" 404 11121
+[10/Aug/2017 10:30:13] "GET / HTTP/1.1" 302 0
+Not Found: /ibm/console/logon.jsp
+[10/Aug/2017 10:30:13] "GET /ibm/console/logon.jsp?action=OK HTTP/1.1" 404 11140
+Not Found: /CSS/Miniweb.css
+[10/Aug/2017 10:30:13] "GET /CSS/Miniweb.css HTTP/1.1" 404 11112
+[10/Aug/2017 10:30:13] "GET / HTTP/1.0" 302 0
+Not Found: /docs/cplugError.html/
+[10/Aug/2017 10:30:13] "GET /docs/cplugError.html/ HTTP/1.1" 404 11130
+Not Found: /translate.js
+[10/Aug/2017 10:30:13] "GET /translate.js HTTP/1.1" 404 11103
+[10/Aug/2017 10:30:13] "GET / HTTP/1.1" 302 0
+Not Found: /console/
+[10/Aug/2017 10:30:13] "GET /console/ HTTP/1.1" 404 11091
+Not Found: /console/portal/0/Welcome
+[10/Aug/2017 10:30:14] "GET /console/portal/0/Welcome HTTP/1.1" 404 11139
+[10/Aug/2017 10:30:14] "GET /accounts/login/?next=/ HTTP/1.1" 200 1933
+[10/Aug/2017 10:30:14] "HEAD / HTTP/1.1" 302 0
+[10/Aug/2017 10:30:15] "GET / HTTP/1.1" 302 0
+[10/Aug/2017 10:30:15] "HEAD /accounts/login/?next=/ HTTP/1.1" 200 0
+[10/Aug/2017 10:30:15] "GET /accounts/login/?next=/ HTTP/1.1" 200 1933
+[10/Aug/2017 10:30:23] code 400, message Bad request syntax ('\x80\xf1\x01\x03\x03\x00\xd8\x00\x00\x00\x10\x00\x00\x05\x00\x00\x04\x01\x00\x80\x00\x00\x02\x00\x00\x01\x00\x00\x16\x00\x003\x00\x009\x00\x00:\x00\x00\x18\x00\x005\x00\x00')
+[10/Aug/2017 10:30:23] 
+[10/Aug/2017 10:30:23] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\xcb\xc2hc\xaa\xf1')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[10/Aug/2017 17:58:03] "GET / HTTP/1.1" 200 23389
+[10/Aug/2017 17:58:23] "GET / HTTP/1.1" 302 0
+[10/Aug/2017 17:58:23] "GET /accounts/login/?next=/ HTTP/1.1" 200 1933
+[10/Aug/2017 17:59:10] "GET / HTTP/1.1" 302 0
+[10/Aug/2017 17:59:10] "GET /accounts/login/?next=/ HTTP/1.1" 200 1933
+[10/Aug/2017 17:59:10] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[10/Aug/2017 17:59:10] "GET /static/css/custom.min.css HTTP/1.1" 200 72189
+[10/Aug/2017 17:59:10] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 99946
+[10/Aug/2017 17:59:10] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 20766
+Not Found: /favicon.ico
+[10/Aug/2017 17:59:10] "GET /favicon.ico HTTP/1.1" 404 11104
+[10/Aug/2017 17:59:36] "GET /accounts/logout/ HTTP/1.1" 302 0
+[10/Aug/2017 17:59:36] "GET / HTTP/1.1" 302 0
+[10/Aug/2017 17:59:36] "GET /accounts/login/?next=/ HTTP/1.1" 200 1933
+[10/Aug/2017 17:59:36] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[10/Aug/2017 17:59:44] "POST /accounts/login/?next=/ HTTP/1.1" 200 2026
+[10/Aug/2017 17:59:45] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[10/Aug/2017 17:59:57] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[10/Aug/2017 17:59:57] "GET / HTTP/1.1" 200 23389
+[10/Aug/2017 17:59:58] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 200 4248
+[10/Aug/2017 17:59:58] "GET /static/js/jquery.min.js HTTP/1.1" 200 84280
+[10/Aug/2017 17:59:58] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 29110
+[10/Aug/2017 17:59:58] "GET /static/js/custom.min.js HTTP/1.1" 200 4386
+[10/Aug/2017 17:59:58] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 200 83760
+[10/Aug/2017 18:00:02] "POST /accounts/login/?next=/ HTTP/1.1" 302 0
+[10/Aug/2017 18:00:02] "GET / HTTP/1.1" 200 23389
+[10/Aug/2017 18:00:58] "GET /deploy/key_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:00:59] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 200 1961
+[10/Aug/2017 18:00:59] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 200 82481
+[10/Aug/2017 18:00:59] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:00:59] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:01] "GET /deploy/group_list/ HTTP/1.1" 200 13954
+[10/Aug/2017 18:01:03] "GET /deploy/program_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:03] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:03] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:05] "GET /deploy/key_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:05] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:05] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:11] "GET /deploy/file_manage/upload/ HTTP/1.1" 200 27301
+[10/Aug/2017 18:01:11] "GET /static/css/bootstrapValidator.min.css HTTP/1.1" 200 244
+[10/Aug/2017 18:01:11] "GET /static/js/csrf.js HTTP/1.1" 200 972
+[10/Aug/2017 18:01:11] "GET /static/img/loading.gif HTTP/1.1" 200 30269
+[10/Aug/2017 18:01:11] "GET /static/js/bootstrapValidator.min.js HTTP/1.1" 200 110933
+[10/Aug/2017 18:01:19] "GET /deploy/task_list/ HTTP/1.1" 200 15515
+[10/Aug/2017 18:01:19] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:19] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:23] "GET / HTTP/1.1" 200 23389
+[10/Aug/2017 18:01:31] "GET /deploy/program_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:31] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:32] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:34] "GET /deploy/key_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:34] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:34] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:36] "GET /deploy/remote_execution/ HTTP/1.1" 200 23144
+[10/Aug/2017 18:01:36] "GET /static/css/green.css HTTP/1.1" 200 1411
+[10/Aug/2017 18:01:36] "GET /static/js/icheck.min.js HTTP/1.1" 200 4959
+[10/Aug/2017 18:01:36] "GET /static/js/bootstrap-modal-vertical.js HTTP/1.1" 200 727
+[10/Aug/2017 18:01:36] "GET /static/js/salt_result.js HTTP/1.1" 200 7026
+[10/Aug/2017 18:01:38] "GET /deploy/key_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:38] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:38] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:39] "GET /deploy/key_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:39] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:39] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 18:01:44] "GET /deploy/program_list/ HTTP/1.1" 200 16482
+[10/Aug/2017 18:01:44] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[10/Aug/2017 18:01:44] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[10/Aug/2017 23:31:55] "GET /accounts/login/?next= HTTP/1.1" 200 1933
+[10/Aug/2017 23:31:58] "GET /accounts/login/?next= HTTP/1.1" 200 1933
+[10/Aug/2017 23:31:58] "GET /static/css/font-awesome.min.css HTTP/1.1" 200 20766
+[10/Aug/2017 23:31:58] "GET /static/css/animate.min.css HTTP/1.1" 404 1673
+[10/Aug/2017 23:31:58] "GET /static/css/custom.min.css HTTP/1.1" 200 72189
+[10/Aug/2017 23:31:58] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 99946
+[11/Aug/2017 17:38:20] "GET / HTTP/1.1" 200 23389
+[11/Aug/2017 17:38:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[11/Aug/2017 17:38:21] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[14/Aug/2017 10:38:24] "GET / HTTP/1.1" 200 23389
+[15/Aug/2017 10:55:36] "GET / HTTP/1.1" 200 23389
+[15/Aug/2017 10:55:36] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[15/Aug/2017 10:55:36] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[15/Aug/2017 10:55:37] "GET /favicon.ico HTTP/1.1" 404 11104
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 09:43:35
+Django version 1.9, using settings 'devops.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+<QueryDict: {}>
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[16/Aug/2017 13:56:46] "GET / HTTP/1.1" 200 31503
+[16/Aug/2017 13:56:46] "GET /static/js/jquery.metisMenu.js HTTP/1.1" 200 3984
+[16/Aug/2017 13:56:46] "GET /static/js/jquery.slimscroll.min.js HTTP/1.1" 200 4674
+[16/Aug/2017 13:56:46] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[16/Aug/2017 13:56:46] "GET /static/js/layer.js HTTP/1.1" 200 14893
+[16/Aug/2017 13:56:46] "GET /static/js/dateRange.js HTTP/1.1" 200 69439
+[16/Aug/2017 13:56:46] "GET /static/js/hplus.min.js HTTP/1.1" 200 2410
+[16/Aug/2017 13:56:46] "GET /static/js/contabs.min.js HTTP/1.1" 200 5611
+[16/Aug/2017 13:56:46] "GET /static/js/salt_result.js HTTP/1.1" 200 7042
+[16/Aug/2017 13:56:46] "GET /static/js/pace.min.js HTTP/1.1" 200 12314
+[16/Aug/2017 13:56:47] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[16/Aug/2017 13:56:47] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[16/Aug/2017 13:57:21] "GET /monitor/control_board/ HTTP/1.1" 200 2266
+[16/Aug/2017 14:06:05] "GET / HTTP/1.1" 200 31503
+[16/Aug/2017 14:06:05] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[16/Aug/2017 14:06:05] "GET /static/js/salt_result.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/jquery.metisMenu.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/jquery.slimscroll.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/layer.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/dateRange.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/hplus.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/contabs.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/pace.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:05] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[16/Aug/2017 14:06:05] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[16/Aug/2017 14:06:11] "GET /deploy/key_list/ HTTP/1.1" 200 20046
+[16/Aug/2017 14:06:11] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/jquery.metisMenu.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/jquery.slimscroll.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/dateRange.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/layer.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/hplus.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/contabs.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/pace.min.js HTTP/1.1" 304 0
+[16/Aug/2017 14:06:11] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[16/Aug/2017 14:06:11] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[16/Aug/2017 14:06:11] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[16/Aug/2017 14:06:12] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+Internal Server Error: /deploy/key_list_import/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/deploy/views.py", line 410, in salt_key_import
+    sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 27, in __init__
+    self.token_id()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 34, in token_id
+    content = self.postRequest(obj,prefix='/login')
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 47, in postRequest
+    opener = urllib2.urlopen(req)
+  File "/usr/lib64/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib64/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.7/urllib2.py", line 1258, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib64/python2.7/urllib2.py", line 1214, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 111] Connection refused>
+[16/Aug/2017 14:06:14] "GET /deploy/key_list_import/ HTTP/1.1" 500 108738
+Internal Server Error: /deploy/key_list_import/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/deploy/views.py", line 410, in salt_key_import
+    sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 27, in __init__
+    self.token_id()
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 34, in token_id
+    content = self.postRequest(obj,prefix='/login')
+  File "/ctu/workshop/devops/deploy/saltapi.py", line 47, in postRequest
+    opener = urllib2.urlopen(req)
+  File "/usr/lib64/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib64/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.7/urllib2.py", line 1258, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib64/python2.7/urllib2.py", line 1214, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 111] Connection refused>
+[16/Aug/2017 14:09:00] "GET /deploy/key_list_import/ HTTP/1.1" 500 108738
+[16/Aug/2017 17:03:28] "GET / HTTP/1.1" 302 0
+[16/Aug/2017 17:03:28] "GET /accounts/login/?next=/ HTTP/1.1" 200 1933
+[17/Aug/2017 07:35:27] "GET / HTTP/1.1" 200 31503
+[17/Aug/2017 07:35:27] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[17/Aug/2017 07:35:27] "GET /static/js/salt_result.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/jquery.metisMenu.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/jquery.slimscroll.min.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/layer.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/dateRange.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/contabs.min.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/hplus.min.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:27] "GET /static/js/pace.min.js HTTP/1.1" 304 0
+[17/Aug/2017 07:35:28] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[17/Aug/2017 07:35:28] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[17/Aug/2017 07:35:31] "GET /deploy/key_list/ HTTP/1.1" 200 20046
+[17/Aug/2017 07:35:31] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[17/Aug/2017 07:35:31] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[17/Aug/2017 07:35:31] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[17/Aug/2017 07:35:31] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[21/Aug/2017 13:16:27] "GET / HTTP/1.1" 200 31503
+[21/Aug/2017 13:16:27] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/css/custom.min.css HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/salt_result.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/custom.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 13:16:27] "GET /static/js/hplus.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/jquery.metisMenu.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/contabs.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/jquery.slimscroll.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:27] "GET /static/js/layer.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:28] "GET /static/js/dateRange.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:28] "GET /static/js/pace.min.js HTTP/1.1" 304 0
+[21/Aug/2017 13:16:28] "GET /static/fonts/fontawesome-webfont.woff?v=4.1.0 HTTP/1.1" 304 0
+[21/Aug/2017 13:16:29] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 13:16:29] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+Not Found: /favicon.ico
+[21/Aug/2017 13:16:30] "GET /favicon.ico HTTP/1.1" 404 11250
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 16, 2017 - 13:55:37
+Django version 1.9, using settings 'devops.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+Internal Server Error: /program_manage/list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/program_manage/views.py", line 19, in program_list
+    print all_program
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 234, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: program_manage_program
+[21/Aug/2017 14:53:00] "GET /program_manage/list/ HTTP/1.1" 500 110709
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 21, 2017 - 14:52:46
+Django version 1.9, using settings 'devops.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x37fd398>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/utils/autoreload.py", line 226, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 116, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/lib/python2.7/site-packages/django/core/management/base.py", line 426, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/usr/lib/python2.7/site-packages/django/core/checks/registry.py", line 75, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/usr/lib/python2.7/site-packages/django/core/checks/model_checks.py", line 28, in check_all_models
+    errors.extend(model.check(**kwargs))
+  File "/usr/lib/python2.7/site-packages/django/db/models/base.py", line 1170, in check
+    errors.extend(cls._check_fields(**kwargs))
+  File "/usr/lib/python2.7/site-packages/django/db/models/base.py", line 1247, in _check_fields
+    errors.extend(field.check(**kwargs))
+  File "/usr/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 925, in check
+    errors = super(AutoField, self).check(**kwargs)
+  File "/usr/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 208, in check
+    errors.extend(self._check_backend_specific_checks(**kwargs))
+  File "/usr/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 317, in _check_backend_specific_checks
+    return connections[db].validation.check_field(self, **kwargs)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/validation.py", line 18, in check_field
+    field_type = field.db_type(connection)
+  File "/usr/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 625, in db_type
+    return connection.data_types[self.get_internal_type()] % data
+  File "/usr/lib/python2.7/site-packages/django/db/__init__.py", line 36, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/usr/lib/python2.7/site-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 184, in data_types
+    if self.features.supports_microsecond_precision:
+  File "/usr/lib/python2.7/site-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/features.py", line 53, in supports_microsecond_precision
+    return self.connection.mysql_version >= (5, 6, 4) and Database.version_info >= (1, 2, 5)
+  File "/usr/lib/python2.7/site-packages/django/utils/functional.py", line 33, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 359, in mysql_version
+    with self.temporary_connection():
+  File "/usr/lib64/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/lib/python2.7/site-packages/django/db/backends/base/base.py", line 564, in temporary_connection
+    cursor = self.cursor()
+  File "/usr/lib/python2.7/site-packages/django/db/backends/base/base.py", line 231, in cursor
+    cursor = self.make_debug_cursor(self._cursor())
+  File "/usr/lib/python2.7/site-packages/django/db/backends/base/base.py", line 204, in _cursor
+    self.ensure_connection()
+  File "/usr/lib/python2.7/site-packages/django/db/backends/base/base.py", line 199, in ensure_connection
+    self.connect()
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/base/base.py", line 199, in ensure_connection
+    self.connect()
+  File "/usr/lib/python2.7/site-packages/django/db/backends/base/base.py", line 171, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 264, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on 'test.devops.cn' (113)")
+[21/Aug/2017 14:59:41] "GET /program_manage/list/ HTTP/1.1" 302 0
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:49: RemovedInDjango110Warning: The current_app argument of RequestContext is deprecated. Set the current_app attribute of its request instead.
+  context_instance = RequestContext(request, current_app=current_app)
+
+/usr/lib/python2.7/site-packages/django/shortcuts/__init__.py:53: RemovedInDjango110Warning: The context_instance argument of render_to_string is deprecated.
+  return HttpResponse(loader.render_to_string(*args, **kwargs),
+
+[21/Aug/2017 14:59:41] "GET /accounts/login/?next=/program_manage/list/ HTTP/1.1" 200 1933
+[21/Aug/2017 14:59:41] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[21/Aug/2017 14:59:47] "POST /accounts/login/?next=/program_manage/list/ HTTP/1.1" 200 2025
+[21/Aug/2017 14:59:47] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[21/Aug/2017 14:59:53] "GET /accounts/login/ HTTP/1.1" 200 1933
+[21/Aug/2017 14:59:53] "GET /static/css/animate.min.css HTTP/1.1" 404 1672
+[21/Aug/2017 15:01:02] "POST /accounts/login/ HTTP/1.1" 302 0
+Not Found: /accounts/profile/
+[21/Aug/2017 15:01:02] "GET /accounts/profile/ HTTP/1.1" 404 12729
+[21/Aug/2017 15:01:22] "GET /accounts/login/ HTTP/1.1" 200 1977
+[21/Aug/2017 15:01:22] "GET / HTTP/1.1" 200 17682
+[21/Aug/2017 15:01:22] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:01:23] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:01:23] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:01:26] "GET / HTTP/1.1" 200 17682
+[21/Aug/2017 15:01:26] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:01:26] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:01:26] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:01:28] "GET /deploy/key_list/ HTTP/1.1" 200 19113
+[21/Aug/2017 15:01:28] "GET /static/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[21/Aug/2017 15:01:28] "GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[21/Aug/2017 15:01:28] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:01:28] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:01:28] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[21/Aug/2017 15:01:29] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[21/Aug/2017 15:01:48] "GET /deploy/key_list_import/ HTTP/1.1" 302 0
+[21/Aug/2017 15:01:48] "GET /deploy/key_list/ HTTP/1.1" 200 55478
+[21/Aug/2017 15:01:49] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:01:49] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[21/Aug/2017 15:01:49] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:01:49] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[21/Aug/2017 15:02:07] "GET /deploy/group_list/ HTTP/1.1" 200 16539
+[21/Aug/2017 15:02:07] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:02:07] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:02:10] "GET /deploy/group_manage/add/ HTTP/1.1" 200 25820
+[21/Aug/2017 15:02:10] "GET /static/js/validator.min.js HTTP/1.1" 200 5955
+[21/Aug/2017 15:02:10] "GET /static/js/multiselect.min.js HTTP/1.1" 200 9134
+[21/Aug/2017 15:02:10] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:02:10] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:03:29] "POST /deploy/group_manage/add/ HTTP/1.1" 302 0
+[21/Aug/2017 15:03:29] "GET /deploy/group_list/ HTTP/1.1" 200 20946
+[21/Aug/2017 15:03:29] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:03:29] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+Internal Server Error: /program_manage/list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/ctu/workshop/devops/program_manage/views.py", line 19, in program_list
+    print all_program
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 234, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 852, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+ProgrammingError: (1146, "Table 'devopsdb.program_manage_program' doesn't exist")
+[21/Aug/2017 15:03:36] "GET /program_manage/list/ HTTP/1.1" 500 119734
+[21/Aug/2017 15:10:30] "GET /program_manage/list/ HTTP/1.1" 200 23562
+[21/Aug/2017 15:10:30] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:10:30] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:10:30] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:10:34] "GET /vpn_manage/list/ HTTP/1.1" 200 17820
+[21/Aug/2017 15:10:34] "GET /static/css/green.css HTTP/1.1" 304 0
+[21/Aug/2017 15:10:34] "GET /static/js/icheck.min.js HTTP/1.1" 304 0
+[21/Aug/2017 15:10:34] "GET /static/js/jquery.tagsinput.js HTTP/1.1" 200 14841
+[21/Aug/2017 15:10:34] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:10:34] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:10:35] "GET /logger_manage/logger_list/ HTTP/1.1" 200 34718
+[21/Aug/2017 15:10:35] "GET /static/js/jquery.cascadeselect.js HTTP/1.1" 404 1693
+[21/Aug/2017 15:10:35] "GET /static/css/bootstrap-datetimepicker.min.css HTTP/1.1" 200 11304
+[21/Aug/2017 15:10:35] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:10:35] "GET /static/js/bootstrap-datetimepicker.min.js HTTP/1.1" 200 37913
+[21/Aug/2017 15:10:35] "GET /static/js/jquery.cascadeselect.js HTTP/1.1" 404 1693
+[21/Aug/2017 15:10:36] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:10:36] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:10:36] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+Internal Server Error: /logger_manage/logger_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/ctu/workshop/devops/logger_manage/views.py", line 134, in list
+    log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
+  File "/ctu/workshop/devops/logger_manage/views.py", line 100, in get_log
+    ret = "\n".join(ret)
+TypeError: sequence item 0: expected string, dict found
+[21/Aug/2017 15:10:44] "POST /logger_manage/logger_list/ HTTP/1.1" 500 71512
+[21/Aug/2017 15:11:00] "GET /deploy/key_list/ HTTP/1.1" 200 55478
+[21/Aug/2017 15:11:00] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:11:00] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:11:00] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1732
+[21/Aug/2017 15:11:01] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1729
+[21/Aug/2017 15:37:10] "GET /program_manage/list/ HTTP/1.1" 200 417556
+[21/Aug/2017 15:37:11] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:37:11] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:37:11] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:37:43] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:37:43] "GET /program_manage/list/ HTTP/1.1" 200 417556
+[21/Aug/2017 15:37:43] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:37:43] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:37:45] "GET /deploy/group_list/ HTTP/1.1" 200 20946
+[21/Aug/2017 15:37:45] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:37:45] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:37:46] "GET /vpn_manage/list/ HTTP/1.1" 200 17820
+[21/Aug/2017 15:37:47] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:37:47] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:37:48] "GET /logger_manage/logger_list/ HTTP/1.1" 200 50530
+[21/Aug/2017 15:37:48] "GET /static/js/jquery.cascadeselect.js HTTP/1.1" 404 1693
+[21/Aug/2017 15:37:48] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:37:48] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:37:48] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:38:06] "GET /vpn_manage/list/ HTTP/1.1" 200 17820
+[21/Aug/2017 15:38:06] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:38:06] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 21, 2017 - 14:59:28
+Django version 1.9, using settings 'devops.settings'
+Starting development server at http://0.0.0.0:9992/
+Quit the server with CONTROL-C.
+[]
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+([<SaltHost: my_testserver>, <SaltHost: test1.51du.cn>, <SaltHost: unicomrecharge_server1.ctu.com>, <SaltHost: unicomrecharge_server10.ctu.com>, <SaltHost: unicomrecharge_server100.ctu.com>, <SaltHost: unicomrecharge_server101.ctu.com>, <SaltHost: unicomrecharge_server102.ctu.com>, <SaltHost: unicomrecharge_server103.ctu.com>, <SaltHost: unicomrecharge_server104.ctu.com>, <SaltHost: unicomrecharge_server105.ctu.com>, <SaltHost: unicomrecharge_server106.ctu.com>, <SaltHost: unicomrecharge_server108.ctu.com>, <SaltHost: unicomrecharge_server109.ctu.com>, <SaltHost: unicomrecharge_server11.ctu.com>, <SaltHost: unicomrecharge_server117.ctu.com>, <SaltHost: unicomrecharge_server118.ctu.com>, <SaltHost: unicomrecharge_server119.ctu.com>, <SaltHost: unicomrecharge_server12.ctu.com>, <SaltHost: unicomrecharge_server120.ctu.com>, <SaltHost: unicomrecharge_server121.ctu.com>, '...(remaining elements truncated)...'], [])
+<QueryDict: {u'start_time': [u'2017-08-21 15:00'], u'lines': [u'10'], u'program_id': [u'0'], u'host': [u'0'], u'end_time': [u'2017-08-21 15:08'], u'csrfmiddlewaretoken': [u'DM248FFKv47FWTZH2TwwlnUKEWhYhA9z']}>
+[<Program: E_1>, <Program: E_2>, <Program: E_3>, <Program: >, <Program: >, <Program: >, <Program: E_12>, <Program: E_13>, <Program: E_14>, <Program: E_48>, <Program: E_49>, <Program: E_50>, <Program: E_23>, <Program: E_24>, <Program: E_25>, <Program: E_37>, <Program: E_38>, <Program: E_39>, <Program: >, <Program: >, '...(remaining elements truncated)...']
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+[<Program: E_1>, <Program: E_2>, <Program: E_3>, <Program: >, <Program: >, <Program: >, <Program: E_12>, <Program: E_13>, <Program: E_14>, <Program: E_48>, <Program: E_49>, <Program: E_50>, <Program: E_23>, <Program: E_24>, <Program: E_25>, <Program: E_37>, <Program: E_38>, <Program: E_39>, <Program: >, <Program: >, '...(remaining elements truncated)...']
+program list >>  >>  <QueryDict: {}>
+<QueryDict: {}>
+([<SaltHost: my_testserver>, <SaltHost: test1.51du.cn>, <SaltHost: unicomrecharge_server1.ctu.com>, <SaltHost: unicomrecharge_server10.ctu.com>, <SaltHost: unicomrecharge_server100.ctu.com>, <SaltHost: unicomrecharge_server101.ctu.com>, <SaltHost: unicomrecharge_server102.ctu.com>, <SaltHost: unicomrecharge_server103.ctu.com>, <SaltHost: unicomrecharge_server104.ctu.com>, <SaltHost: unicomrecharge_server105.ctu.com>, <SaltHost: unicomrecharge_server106.ctu.com>, <SaltHost: unicomrecharge_server108.ctu.com>, <SaltHost: unicomrecharge_server109.ctu.com>, <SaltHost: unicomrecharge_server11.ctu.com>, <SaltHost: unicomrecharge_server117.ctu.com>, <SaltHost: unicomrecharge_server118.ctu.com>, <SaltHost: unicomrecharge_server119.ctu.com>, <SaltHost: unicomrecharge_server12.ctu.com>, <SaltHost: unicomrecharge_server120.ctu.com>, <SaltHost: unicomrecharge_server121.ctu.com>, '...(remaining elements truncated)...'], [<Program: E_1>, <Program: E_2>, <Program: E_3>, <Program: >, <Program: >, <Program: >, <Program: E_12>, <Program: E_13>, <Program: E_14>, <Program: E_48>, <Program: E_49>, <Program: E_50>, <Program: E_23>, <Program: E_24>, <Program: E_25>, <Program: E_37>, <Program: E_38>, <Program: E_39>, <Program: >, <Program: >, '...(remaining elements truncated)...'])
+([<SaltHost: my_testserver>, <SaltHost: test1.51du.cn>, <SaltHost: unicomrecharge_server1.ctu.com>, <SaltHost: unicomrecharge_server10.ctu.com>, <SaltHost: unicomrecharge_server100.ctu.com>, <SaltHost: unicomrecharge_server101.ctu.com>, <SaltHost: unicomrecharge_server102.ctu.com>, <SaltHost: unicomrecharge_server103.ctu.com>, <SaltHost: unicomrecharge_server104.ctu.com>, <SaltHost: unicomrecharge_server105.ctu.com>, <SaltHost: unicomrecharge_server106.ctu.com>, <SaltHost: unicomrecharge_server108.ctu.com>, <SaltHost: unicomrecharge_server109.ctu.com>, <Salt[21/Aug/2017 15:38:07] "GET /logger_manage/logger_list/ HTTP/1.1" 200 50530
+[21/Aug/2017 15:38:07] "GET /static/js/jquery.cascadeselect.js HTTP/1.1" 404 1693
+[21/Aug/2017 15:38:08] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:38:08] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:38:08] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:38:09] "GET /vpn_manage/list/ HTTP/1.1" 200 17820
+[21/Aug/2017 15:38:09] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:38:09] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:38:11] "GET /static/js/bootstrap.js HTTP/1.1" 404 1660
+[21/Aug/2017 15:38:11] "GET /program_manage/list/ HTTP/1.1" 200 417556
+[21/Aug/2017 15:38:11] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:38:11] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
+[21/Aug/2017 15:38:25] "GET /program_manage/edit/1/ HTTP/1.1" 200 21641
+[21/Aug/2017 15:38:25] "GET /static/js/skin/layer.css HTTP/1.1" 404 1666
+[21/Aug/2017 15:38:25] "GET /static/js/extend/layer.ext.js HTTP/1.1" 404 1681
