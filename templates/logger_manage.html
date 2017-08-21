@@ -35,9 +35,9 @@
                             {% csrf_token %}
                             <fieldset>
                                 <div class="form-group">
+                                    <select class="form-control ng-pristine ng-valid" name="host" id="hostname"
+                                            onchange="change(this);">
 
-                                    <select class="form-control ng-pristine ng-valid" name="host" ng-model="selectItem"
-                                            ng-options="d.text for d in dimensions" id="hostname" onChange="change()">
                                         {% if hostname == '' or hostname == '0' %}
                                         <option value="0" selected="selected">请选择主机名</option>
                                         {% else %}
@@ -59,6 +59,10 @@
                                         <option value="0" selected="selected">请选择程序名</option>
                                         {% else %}
                                         <option value="{{program_id}}" selected="selected">{{program_id}}</option>
+                                        {% endif %}
+
+                                        {% if programs.len == 0 %}
+                                        <option value="0" selected="selected">请选择程序名</option>
                                         {% endif %}
 
                                         {% for program in programs %}
@@ -109,22 +113,6 @@
                                 <pre class="form-control" >{{ log_content }}</pre>
                             <!--</div>-->
                         </div>
-                        <!--<div class="item form-group">-->
-                            <!--<h2> 省级联动</h2>-->
-                            <!--<div class="city" >-->
-                                <!--<select id="SelProvince" class="select"></select>-->
-                                <!--<select id="SelCity" class="select"></select>-->
-                                <!--<select id="SelArea" class="select"></select>-->
-                                <!--<select id="SelXian" class="select"></select>-->
-                            <!--</div>-->
-
-                            <!--<h2> 市区联动</h2>-->
-                            <!--<div class="city" >-->
-                                <!--<select id="Select1" class="select"></select>-->
-                                <!--<select id="Select2" class="select"></select>-->
-                                <!--<select id="Select3" class="select"></select>-->
-                            <!--</div>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -178,30 +166,38 @@ width: 'auto'
 
 </script>
 
+<script>
 
-<!--<script type="text/javascript">-->
-       <!--$(document).ready(function () {-->
+function change(obj) {
+    <!--document.getElementById("programid").innerHTML = "请选择程序名"-->
+    var hostname = obj.value;
+    var url = "{% url 'get_programid' %}?hostname=" + hostname;
+        $(".loading").show();
+    $.ajax({
+        type:"GET",
+        url: url,
+        data:{},
+        dataType:"html",
+        success:function(ret) {
+        $(".loading").hide();
 
-            <!--$.fn.CascadeSelect({-->
-                <!--url: '/CascadeSelect/CascadeSelect.ashx',  //返回Json数据的一般处理文件-->
-                <!--idKey: 'Id',     // 绑定下拉框实际值的字段-->
-                <!--nameKey: 'Name', // 绑定下拉框显示值的字段-->
-                <!--casTopId: 0,  // 顶级节点ParentId-->
-                <!--casCount: 4,  // 级联个数-->
-                <!--casObjId: ['SelProvince', 'SelCity', 'SelArea', 'SelXian'], // 级联下拉框id-->
-                <!--casDefVal: ['全国', 5, '益阳', 22], // 级联默认值(Id,Name都可以)-->
-            <!--});-->
+        alert(ret);
+        $("#program_id").html(ret);
+        <!--if(ret==0){-->
+            <!---->
+            <!--$(obj).parent().prev().html("在线");-->
+        <!--}else if(ret==1){-->
+            <!--$(obj).parent().prev().html("离线");-->
+        <!--}-->
+        <!--alert(ret);-->
+        },
+        errors:function(e){
+                   alert("error");
+               }
+        });
+        return true;
+}
 
-              <!--$.fn.CascadeSelect({-->
-                <!--url: '/CascadeSelect/CascadeSelect.ashx',  //返回Json数据的一般处理文件-->
-                <!--idKey: 'Id',   // 绑定下拉框实际值的字段-->
-                <!--nameKey: 'Name', // 绑定下拉框显示值的字段-->
-                <!--casTopId: 1,  // 顶级节点ParentId-->
-                <!--casCount: 3, // 级联个数-->
-                <!--casObjId: ['Select1', 'Select2', 'Select3'], // 级联下拉框id-->
-                <!--casDefVal: [5, '益阳', 22], // 级联默认值(Id,Name都可以)-->
-            <!--});-->
-        <!--});-->
-     <!--</script>-->
-<!-- /jQuery Tags Input -->
+
+</script>
 {% endblock %}

@@ -11,6 +11,7 @@ class Program(models.Model):
     vpn_code = models.CharField(max_length=255, default='', blank=True, null=True, verbose_name=u'VPN编号')
     ip_addr = models.CharField(max_length=255, default='', blank=True, null=True, verbose_name=u'IP地址')
     os_type = models.IntegerField(default=0, blank=True, null=True, verbose_name=u'系统类型')
+    nodename = models.CharField(max_length=255, default='', blank=True, null=True, verbose_name=u'节点名')
 
     def __unicode__(self):
         return self.program_id

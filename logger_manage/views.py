@@ -77,7 +77,8 @@ def get_log(hostname,program_id,start_time,end_time,lines):
         arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
         result = sapi.remote_localexec(tgt,fun,arg,expr_form)
         result = format_loggerresult(result)
-        ret.append(result)
+        if result != {}:
+            ret.append(result)
     else:
         # windows
         tgt = "-G os:Windows"
@@ -85,19 +86,25 @@ def get_log(hostname,program_id,start_time,end_time,lines):
         projectdir = settings.PROJECT_UNICOMRECHARGE['projectdir_windows']
 
         arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
-        ret.append(sapi.remote_localexec(tgt,fun,arg,expr_form))
+        result = sapi.remote_localexec(tgt,fun,arg,expr_form)
+        if result  != {}:
+            ret.append(result)
 
         tgt = "-G os:CentOS"
         saltdir = settings.PROJECT_UNICOMRECHARGE['saltdir_linux']
         projectdir = settings.PROJECT_UNICOMRECHARGE['projectdir_linux']
         arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
-        ret.append(sapi.remote_localexec(tgt,fun,arg,expr_form))
+        result = sapi.remote_localexec(tgt,fun,arg,expr_form)
+        if result  != {}:
+            ret.append(result)
 
 
     if ret == []:
         ret = "没有查询到结果"+get_datetime()
+    else:
+        print ret
 
-    ret = "\n".join(ret)
+        ret = "\n".join(ret)
     return ret
 
 def list(request):
@@ -134,11 +141,13 @@ def list(request):
         log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
 
         minions = SaltHost.objects.filter(status=True)
+        programs = Program.objects.filter()
 
         return render(request,"logger_manage.html",{'page_name':u"查看日志",
                                                     'query_button':"查询",
                                                     'log_content':log,
                                                     'all_minions':minions,
+                                                    'programs':programs,
                                                     'hostname':hostname,
                                                     'program_id':program_id,
                                                     'lines':lines,
@@ -152,3 +161,19 @@ def show_logger(request,id=None):
         sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
         # print sapi.list_all_key()
     return render(request,"logger_manage.html",{'page_name':u"查看日志"})
+
+
+def get_programid(request):
+    args = request.GET
+    hostname = args['hostname']
+    template = "logger_manage.html"
+    print hostname
+    programs = []
+    minions = SaltHost.objects.filter(status=True)
+    if hostname.find("com") > -1:
+        programs = Program.objects.filter(nodename=hostname)
+        print programs
+        return render(request,template,{ 'programs':programs,
+                              })
+    return render(request,template,{ 'programs':programs,
+                           })

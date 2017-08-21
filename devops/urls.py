@@ -84,6 +84,7 @@ urlpatterns = [
     url(r'^program_manage/delete/(?P<id>\d+)/$',program_views.program_delete,name='program_delete'),
     url(r'^logger_manage/logger_list/$',logger_views.list,name='logger_list'),
     url(r'^logger_manage/show_logger/(?P<id>\d+)/$',logger_views.show_logger,name='show_logger'),
+    url(r'^logger_manage/get_programid/$',logger_views.get_programid,name='get_programid'),
     url(r'^vpn_manage/edit/(?P<id>\d+)/$',vpn_views.edit,name='vpn_edit'),
     url(r'^vpn_manage/list/$',vpn_views.list,name='vpn_list'),
     url(r'^vpn_manage/add/$',vpn_views.edit,name='vpn_add'),
