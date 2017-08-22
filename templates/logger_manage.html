@@ -38,6 +38,7 @@
                                     <select class="form-control ng-pristine ng-valid" name="host" id="hostname"
                                             onchange="Get_ProgramID_Data(this)">
 
+                                        <option value="0">请选择主机名</option>
                                         {% if hostname == '' or hostname == '0' %}
                                         <option value="0" selected="selected">请选择主机名</option>
                                         {% else %}
