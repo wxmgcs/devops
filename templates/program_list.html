@@ -31,11 +31,10 @@
                                                 <fieldset>
                                                     <div class="form-group" ng-if="inputType == 'text' || inputType == undefined" class="form-group ng-scope">
                                                         <input type="text" class="form-control console-searchbar-textinput ng-pristine ng-valid"
-                                                               placeholder="程序编号"  ng-model="searchForm.searchText" name="new_program_name">
+                                                               placeholder="程序编号"  ng-model="searchForm.searchText" name="new_program_name" value="{{program_id}}">
                                                     </div>
                                                     <br/><br/>
                                                     <button type="submit" class="btn btn-primary ng-binding">添加</button>
-
                                                 </fieldset>
                                             </form>
 
@@ -132,7 +131,7 @@
                                                     </li>
                                                     <li><a href="/deploy/remote_execution/">远程命令</a>
                                                     </li>
-                                                    <li><a href="/program_manage/delete/{{program.id}}/">删除</a>
+                                                    <li><a id='del_{{program.id}}' href="#" value="/program_manage/delete/{{program.id}}/" type="button" onclick="submit_programcmd(this)">删除</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -143,7 +142,7 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
-                            <div class="modal fade" id="programManageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" id="programManageModal" tabindex="-1" role="dialog" aria-labelledby="programManageModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">

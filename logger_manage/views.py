@@ -184,7 +184,7 @@ def show_logger(request,id=None):
                                                 'query_button':"查询",
                                                 'log_content':log,
                                                 'all_minions':[],
-                                                'hostname':'0',
+                                                'hostname':hostname,
                                                 'program_id':program_id,
                                                 'lines':lines,
                                                 'start_time':start_time,

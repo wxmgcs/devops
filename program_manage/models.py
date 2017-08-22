@@ -5,7 +5,8 @@ from django.db import models
 
 # Create your models here.
 class Program(models.Model):
-    program_id = models.CharField(max_length=255, default='', blank=True, null=True, verbose_name=u'程序编号')
+    program_id = models.CharField(max_length=255, default='', blank=True, null=True, unique=True,verbose_name=u'程序编号',
+                                  error_messages={'required': u'程序名不能为空'})
     status = models.IntegerField(default=0, blank=True, null=True, verbose_name=u'状态')
     type = models.IntegerField(default=0, blank=True, null=True, verbose_name=u'程序类型')
     vpn_code = models.CharField(max_length=255, default='', blank=True, null=True, verbose_name=u'VPN编号')

@@ -30,7 +30,7 @@ def program_list(request):
             print request.GET
         else:
             raise Http404
-        return render(request, 'program_list.html', {'all_program': all_program})
+        return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
     elif request.method == 'POST':
 
         print "program list >>",request.method," >> ",request.POST
@@ -41,8 +41,18 @@ def program_list(request):
         if 'new_program_name' in post_args:
             program_id = post_args['new_program_name']
             if program_id != '':
-                Program.objects.create(program_id=program_id)
-            return render(request, 'program_list.html', {'all_program': all_program})
+                ## 判断program_id是否存在
+                # print (Program.objects.filter(program_id=program_id))
+                # if Program.objects.filter(program_id=program_id) == []:
+                try:
+                    Program.objects.create(program_id=program_id)
+                except Exception,ex:
+                    print ex
+                    pass
+                #     all_program = Program.objects.filter()
+                # else:
+                #     return render(request, 'program_list.html', {'all_program': all_program})
+                return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
 
         filter = post_args['filter'][0]
         search_text = post_args['search_text']
@@ -52,12 +62,12 @@ def program_list(request):
         print all_program
 
         if len(search_text) < 1:
-            return render(request, 'program_list.html', {'all_program': all_program})
+            return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
 
         search_text = search_text
         if search_text != '':
             all_program = filter_programs(filter,search_text,all_program)
-        return render(request, 'program_list.html', {'all_program': all_program})
+        return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
 
 
 
@@ -145,6 +155,8 @@ def program_edit(request,id=None):
                 program.save()
 
                 return redirect('program_list')
+            else:
+                return redirect('program_list')
 
         else:
             form = ProgramForm(instance=program)
@@ -159,15 +171,13 @@ def program_edit(request,id=None):
 
 def program_delete(request,id=None):
     if request.user.is_superuser:
-        if id and request.method == 'POST':
+        if id and request.method == 'GET':
             program = get_object_or_404(Program, pk=id)
-            form = ProgramForm(request.POST, instance=program)
-            if form.is_valid():
-                program.delete()
-                return redirect('program_list')
-            return redirect('program_list')
+            program.delete()
+            all_program = Program.objects.filter()
+            return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
         else:
-            return redirect('program_list')
+            return render(request, 'program_list.html',{'program_id':''})
     else:
         raise Http404
 
