@@ -157,13 +157,14 @@ def list(request):
             log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
 
         minions = SaltHost.objects.filter(status=True)
-        programs = Program.objects.filter()
+        # programs = Program.objects.filter()
+        programs = Program.objects.filter(nodename=hostname)
 
         return render(request,"logger_manage.html",{'page_name':u"查看日志",
                                                     'query_button':"查询",
                                                     'log_content':log,
                                                     'all_minions':minions,
-                                                    # 'programs':programs,
+                                                    'programs':programs,
                                                     'hostname':hostname,
                                                     'program_id':program_id,
                                                     'lines':lines,
