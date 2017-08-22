@@ -1,5 +1,5 @@
 # coding: utf8
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 
 # Create your views here.
 from django.shortcuts import render, get_object_or_404, redirect
@@ -37,23 +37,6 @@ def program_list(request):
         # 处理根据哪些参数筛选程序名称
         post_args = request.POST
 
-        # 新建程序
-        if 'new_program_name' in post_args:
-            program_id = post_args['new_program_name']
-            if program_id != '':
-                ## 判断program_id是否存在
-                # print (Program.objects.filter(program_id=program_id))
-                # if Program.objects.filter(program_id=program_id) == []:
-                try:
-                    Program.objects.create(program_id=program_id)
-                except Exception,ex:
-                    print ex
-                    pass
-                #     all_program = Program.objects.filter()
-                # else:
-                #     return render(request, 'program_list.html', {'all_program': all_program})
-                return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
-
         filter = post_args['filter'][0]
         search_text = post_args['search_text']
         print search_text,filter
@@ -69,6 +52,23 @@ def program_list(request):
             all_program = filter_programs(filter,search_text,all_program)
         return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
 
+# 新建程序
+def add(request):
+    print "program list >>",request.method," >> ",request.POST
+    # 处理根据哪些参数筛选程序名称
+    args = request.GET
+
+    # 新建程序
+    if 'new_program_name' in args:
+        program_id = args['new_program_name']
+        if program_id != '':
+            try:
+                Program.objects.create(program_id=program_id)
+            except Exception,ex:
+                print ex
+                pass
+    all_program = Program.objects.filter()
+    return render_to_response('program_list.html', {'all_program': all_program,'program_id':''})
 
 
 FILTER_PROGRAM_NUMBER="0"
@@ -175,7 +175,8 @@ def program_delete(request,id=None):
             program = get_object_or_404(Program, pk=id)
             program.delete()
             all_program = Program.objects.filter()
-            return render(request, 'program_list.html', {'all_program': all_program,'program_id':''})
+            print all_program
+            return render(request, 'program_list.html',{'all_program': all_program})
         else:
             return render(request, 'program_list.html',{'program_id':''})
     else:

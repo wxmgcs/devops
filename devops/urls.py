@@ -83,6 +83,7 @@ urlpatterns = [
     url(r'^monitor/control_board/$',monitor_views.control_board,name='control_board'),
     
     url(r'^program_manage/list/$',program_views.program_list,name='program_list'),
+    url(r'^program_manage/add/$',program_views.add,name='program_add'),
     url(r'^program_manage/edit/(?P<id>\d+)/$',program_views.program_edit,name='program_edit'),
     url(r'^program_manage/delete/(?P<id>\d+)/$',program_views.program_delete,name='program_delete'),
     url(r'^program_manage/stop/(?P<id>\d+)/$',program_views.program_stop,name='program_stop'),

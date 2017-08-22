@@ -16,52 +16,60 @@
                 <div class="x_panel">
                     <div class="x_title">
                         <h2>
-                            <button type="button" class="btn btn-primary ng-binding" data-target="#myModal" data-toggle="modal">添加</button>
+                            <button type="button" class="btn btn-primary ng-binding" data-target="#myModal"
+                                    data-toggle="modal">添加
+                            </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title" id="myModalLabel">新建程序</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <fieldset>
-                                                    <div class="form-group" ng-if="inputType == 'text' || inputType == undefined" class="form-group ng-scope">
-                                                        <input type="text" class="form-control console-searchbar-textinput ng-pristine ng-valid"
-                                                               placeholder="程序编号"  ng-model="searchForm.searchText" name="new_program_name" value="{{program_id}}">
-                                                    </div>
-                                                    <br/><br/>
-                                                    <button type="submit" class="btn btn-primary ng-binding">添加</button>
-                                                </fieldset>
-                                            </form>
-
+                                            <div class="form-group"
+                                                 ng-if="inputType == 'text' || inputType == undefined"
+                                                 class="form-group ng-scope">
+                                                <input id="program_id" type="text"
+                                                       class="form-control console-searchbar-textinput ng-pristine ng-valid"
+                                                       placeholder="程序编号" ng-model="searchForm.searchText"
+                                                       name="new_program_name" value="">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary ng-binding"
+                                                    onclick="add_program()" data-dismiss="modal">添加
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            程序列表</h2>
+                            程序列表
+                        </h2>
                         <div class="clearfix"></div>
                     </div>
 
 
                     <div class="pull-left">
-                        <form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">
+                        <form class="form-inline ng-pristine ng-valid" method="post" action=""
+                              enctype="multipart/form-data">
                             {% csrf_token %}
                             <fieldset>
                                 <div class="form-group">
-                                    <select class="form-control ng-pristine ng-valid" name="filter" ng-model="selectItem" ng-options="d.text for d in dimensions">
+                                    <select class="form-control ng-pristine ng-valid" name="filter"
+                                            ng-model="selectItem" ng-options="d.text for d in dimensions">
                                         <option value="0" selected="selected">程序编号</option>
                                         <option value="1">状态</option>
                                         <option value="2">程序类型</option>
                                         <option value="3">系统类型</option>
                                     </select>
                                 </div>
-                                <div class="form-group" ng-if="inputType == 'text' || inputType == undefined" class="form-group ng-scope">
-                                    <input type="text" class="form-control console-searchbar-textinput ng-pristine ng-valid"
-                                           placeholder="搜索"  ng-model="searchForm.searchText" name="search_text">
+                                <div class="form-group" ng-if="inputType == 'text' || inputType == undefined"
+                                     class="form-group ng-scope">
+                                    <input type="text"
+                                           class="form-control console-searchbar-textinput ng-pristine ng-valid"
+                                           placeholder="搜索" ng-model="searchForm.searchText" name="search_text">
                                 </div>
                                 <button type="submit" class="btn btn-primary ng-binding">搜索</button>
 
@@ -120,18 +128,26 @@
                                                 <a href="#" data-toggle="dropdown" role="button"
                                                    aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a id='stop_{{program.id}}' href="#" value="/program_manage/stop/{{program.id}}/" type="button" onclick="submit_programcmd(this)">停止</a></li>
-                                                    <li><a id='start_{{program.id}}' href="#" value="/program_manage/start/{{program.id}}/" type="button" onclick="submit_programcmd(this)">启动</a></li>
-                                                    <li><a id='restart_{{program.id}}' href="#" value="/program_manage/restart/{{program.id}}/" type="button" onclick="submit_programcmd(this)">重启</a></li>
+                                                    <li><a id='stop_{{program.id}}' href="#"
+                                                           value="/program_manage/stop/{{program.id}}/" type="button"
+                                                           onclick="submit_programcmd(this)">停止</a></li>
+                                                    <li><a id='start_{{program.id}}' href="#"
+                                                           value="/program_manage/start/{{program.id}}/" type="button"
+                                                           onclick="submit_programcmd(this)">启动</a></li>
+                                                    <li><a id='restart_{{program.id}}' href="#"
+                                                           value="/program_manage/restart/{{program.id}}/" type="button"
+                                                           onclick="submit_programcmd(this)">重启</a></li>
                                                     <li><a href="/logger_manage/show_logger/{{program.id}}/">日志管理</a>
-                                                    <!--</li>-->
+                                                        <!--</li>-->
                                                     <li><a href="/program_manage/edit/{{program.id}}/">修改信息</a>
                                                     </li>
                                                     <li><a href="#">监控</a>
                                                     </li>
                                                     <li><a href="/deploy/remote_execution/">远程命令</a>
                                                     </li>
-                                                    <li><a id='del_{{program.id}}' href="#" value="/program_manage/delete/{{program.id}}/" type="button" onclick="submit_programcmd(this)">删除</a>
+                                                    <li><a id='del_{{program.id}}' href="#"
+                                                           value="/program_manage/delete/{{program.id}}/" type="button"
+                                                           onclick="submit_programcmd(this)">删除</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -142,21 +158,27 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
-                            <div class="modal fade" id="programManageModal" tabindex="-1" role="dialog" aria-labelledby="programManageModalLabel">
+                            <div class="modal fade" id="programManageModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="programManageModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title" id="programManageModalLabel">确定</h4>
                                         </div>
                                         <div class="modal-body">
                                             <!--<form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">-->
-                                                <!--{% csrf_token %}-->
-                                                <!--<fieldset>-->
-                                                    <br/><br/>
-                                                    <button type="submit" class="btn btn-primary ng-binding" data-dismiss="modal">取消</button>
-                                                    <button type="submit" class="btn btn-primary ng-binding" data-dismiss="modal" onclick="sure_commit()" >确定</button>
-                                                <!--</fieldset>-->
+                                            <!--{% csrf_token %}-->
+                                            <!--<fieldset>-->
+                                            <br/><br/>
+                                            <button type="submit" class="btn btn-primary ng-binding"
+                                                    data-dismiss="modal">取消
+                                            </button>
+                                            <button type="submit" class="btn btn-primary ng-binding"
+                                                    data-dismiss="modal" onclick="sure_commit()">确定
+                                            </button>
+                                            <!--</fieldset>-->
                                             <!--</form>-->
                                         </div>
                                     </div>
@@ -245,6 +267,18 @@ function sure_commit(){
                     });
     url = '';
 }
+
+
+
+function add_program(){
+    program_name = document.getElementById("program_id").value
+    $.getJSON("/program_manage/add/",{'new_program_name':program_name},function(ProgramID_list){
+                           console.log(ProgramID_list);      //测试使用
+                        });
+}
+
+
+
 
 </script>
 
