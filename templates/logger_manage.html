@@ -36,7 +36,7 @@
                             <fieldset>
                                 <div class="form-group">
                                     <select class="form-control ng-pristine ng-valid" name="host" id="hostname"
-                                            onchange="change(this);">
+                                            onchange="Get_ProgramID_Data(this)">
 
                                         {% if hostname == '' or hostname == '0' %}
                                         <option value="0" selected="selected">请选择主机名</option>
@@ -53,8 +53,8 @@
 
                                 <div class="form-group">
 
-                                    <select class="form-control ng-pristine ng-valid" name="program_id"
-                                            ng-model="selectItem" ng-options="d.text for d in dimensions" id="program_id">
+                                    <select class="form-control ng-pristine ng-valid" name="program_ids"
+                                            ng-model="selectItem" ng-options="d.text for d in dimensions" id="program_ids">
                                         {% if program_id == '0' or program_id == '' %}
                                         <option value="0" selected="selected">请选择程序名</option>
                                         {% else %}
@@ -124,6 +124,42 @@
 {% endblock %}
 
 {% block js %}
+
+
+<script type="text/javascript">
+        //执行相应的动作，调用相关数据请求函数
+        function Get_ProgramID_Data(obj){
+            hostname = obj.value
+            console.log("hostname:"+hostname);
+            if(hostname == '0'){
+                $("#program_ids").empty();
+               // $("#program_ids").append("<option id='Not_data2'>请选择程序ID</option>");
+                $.getJSON('/logger_manage/get_allprogramid/',{'hostname':hostname},function(ProgramID_list){
+//                    console.log(ProgramID_list);      //测试使用
+                    Add_ProgramID(ProgramID_list);
+                });
+
+            }else{      //否则就会向服务器请求数据
+                $.getJSON('/logger_manage/get_programid/',{'hostname':hostname},function(ProgramID_list){
+//                    console.log(ProgramID_list);      //测试使用
+                    Add_ProgramID(ProgramID_list);
+                });
+            }
+        }
+
+        function Add_ProgramID(ProgramID_list){
+            $("#program_ids").empty();
+            $("#program_ids").append("<option id='Not_data2'>请选择程序名</option>");
+            for(var index in ProgramID_list){
+                var text = "<option"+" id='"+ProgramID_list[index]+"'>"+ProgramID_list[index]+"</option>";
+                $("#program_ids").append(text);
+                console.log(text);
+            }
+        }
+
+    </script>
+
+
 <!-- iCheck --->
 <script type="text/javascript" src="/static/js/icheck.min.js"></script>
 <!-- jQuery Tags Input -->
@@ -166,10 +202,9 @@ width: 'auto'
 
 </script>
 
-<script>
+<script type="text/javascript">
 
-function change(obj) {
-    <!--document.getElementById("programid").innerHTML = "请选择程序名"-->
+function get_programid(obj) {
     var hostname = obj.value;
     var url = "{% url 'get_programid' %}?hostname=" + hostname;
         $(".loading").show();
@@ -180,24 +215,42 @@ function change(obj) {
         dataType:"html",
         success:function(ret) {
         $(".loading").hide();
-
-        alert(ret);
-        $("#program_id").html(ret);
-        <!--if(ret==0){-->
-            <!---->
-            <!--$(obj).parent().prev().html("在线");-->
-        <!--}else if(ret==1){-->
-            <!--$(obj).parent().prev().html("离线");-->
-        <!--}-->
+        console.log("!!!!!!!!");
+        console.log(ret);
         <!--alert(ret);-->
+        <!--document.getElementById("program_ids").innerHTML=ret;-->
+
+        <!--var ret = JSON.parse( ret );-->
+        <!--var html = "";-->
+        <!--for(i in ret){-->
+        <!--html = html + "<p class='mydashed'><b style='color: #66d9ef'>" + i + "</b><br />" + ret[i]['result'] + "</p>";-->
+        <!--}-->
+
+        <!--$("#modal-body").html(html);-->
+
+
+        var html = "<div class="form-group"> <select class="form-control ng-pristine ng-valid" name="program_id"
+                                            ng-model="selectItem" ng-options="d.text for d in dimensions" id="program_ids">
+                                        <option value="1" selected="selected">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select> </div>";
+
+        <!--document.getElementById("program_ids").innerHTML=ret;-->
+        <!--$("#form-group").html(html);-->
+
+
+        $("#program_ids").append("<option selected='selected' value='1'>"1"</option>");
+            this.submit();
+
         },
         errors:function(e){
                    alert("error");
                }
         });
-        return true;
+        return false;
 }
-
-
 </script>
+
+
 {% endblock %}

@@ -1,5 +1,5 @@
 # coding: utf8
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 
 # Create your views here.
 from django.shortcuts import render, get_object_or_404, redirect
@@ -11,6 +11,7 @@ from program_manage.models import Program
 
 import time
 import datetime
+import json
 
 def get_datetime():
     return time.strftime("%Y-%m-%d %H:%m", time.localtime())
@@ -54,6 +55,7 @@ def format_loggerresult(result):
 
 
 def get_log(hostname,program_id,start_time,end_time,lines):
+    print (hostname,program_id,start_time,end_time,lines)
     ret = []
 
     sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
@@ -133,12 +135,26 @@ def list(request):
         print (post_args)
 
         hostname = post_args['host']
-        program_id = post_args['program_id']
+        program_id = post_args['program_ids']
         lines = post_args['lines']
         start_time = post_args['start_time']
         end_time = post_args['end_time']
 
-        log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
+        # 根据主机名或者程序id,筛选出主机名和程序目录
+        programs = []
+        if hostname == '0':
+            programs = Program.objects.filter(program_id=program_id)
+
+        elif program_id == "0":
+            programs = Program.objects.filter(nodename=hostname)
+
+        else:
+            programs = Program.objects.filter(nodename=hostname,program_id=program_id)
+
+        for program in programs:
+            hostname = program.nodename
+            program_id = program.program_id
+            log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
 
         minions = SaltHost.objects.filter(status=True)
         programs = Program.objects.filter()
@@ -165,15 +181,60 @@ def show_logger(request,id=None):
 
 def get_programid(request):
     args = request.GET
+    print  args
     hostname = args['hostname']
     template = "logger_manage.html"
     print hostname
     programs = []
     minions = SaltHost.objects.filter(status=True)
+    programslist = []
     if hostname.find("com") > -1:
         programs = Program.objects.filter(nodename=hostname)
-        print programs
-        return render(request,template,{ 'programs':programs,
-                              })
-    return render(request,template,{ 'programs':programs,
-                           })
+
+    for program in programs:
+        programslist.append(program.program_id)
+    return HttpResponse(json.dumps(programslist))
+
+
+def get_allprogramid(request):
+    programslist = []
+    programs = Program.objects.filter()
+
+    for program in programs:
+        programslist.append(program.program_id)
+    return HttpResponse(json.dumps(programslist))
+
+
+
+def Map(request):
+    return render_to_response("map.html")
+    #return HttpResponse("Hello!")
+
+Place_dict = {
+    "GuangDong":{
+        "GuangZhou":["PanYu","HuangPu","TianHe"],
+        "QingYuan":["QingCheng","YingDe","LianShan"],
+        "FoShan":["NanHai","ShunDe","SanShui"]
+    },
+    "ShanDong":{
+        "JiNan":["LiXia","ShiZhong","TianQiao"],
+        "QingDao":["ShiNan","HuangDao","JiaoZhou"]
+    },
+    "HuNan":{
+        "ChangSha":["KaiFu","YuHua","WangCheng"],
+        "ChenZhou":["BeiHu","SuXian","YongXian"]
+    }
+};
+def Return_City_Data(request):
+    province = request.GET['Province']
+    print province
+    City_list = []
+    for city in Place_dict[province]:
+        City_list.append(city)
+    return HttpResponse(json.dumps(City_list))
+
+def Return_Country_Data(request):
+    province,city = request.GET['Province'],request.GET['City']
+    print province,city
+    Country_list = Place_dict[province][city]
+    return HttpResponse(json.dumps(Country_list))

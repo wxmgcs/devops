@@ -49,6 +49,7 @@ def program_list(request):
         print search_text,filter
 
         all_program = Program.objects.filter()
+        print all_program
 
         if len(search_text) < 1:
             return render(request, 'program_list.html', {'all_program': all_program})
@@ -65,8 +66,27 @@ FILTER_PROGRAM_STATUS="1"
 FILTER_PROGRAM_TYPE = "2"
 FILTER_SYSTEM_TYPE = "3"
 
+def format_search_text(search_text):
+    if search_text == "windows":
+        search_text = 1
+    elif search_text == "linux":
+        search_text = 2
+    elif search_text == u"下单":
+        search_text = 1
+    elif search_text == u"支付":
+        search_text = 2
+    elif search_text == u"核单":
+        search_text = 3
+    elif search_text == u"运行中":
+        search_text = 1
+    elif search_text == u"已停止":
+        search_text = 0
+    return search_text
+
 # 根据查询条件筛选程序
 def filter_programs(filter,search_text,all_programs):
+
+    # search_text = format_search_text(search_text)
     ret = []
     if filter == FILTER_PROGRAM_NUMBER:
         for item in all_programs:
@@ -91,7 +111,7 @@ def filter_programs(filter,search_text,all_programs):
         else:
             os_type = 0
         for item in all_programs:
-            if item['os_type'] == os_type:
+            if item['os_type'] == search_text:
                 ret.append(item)
         return ret
     return ret
