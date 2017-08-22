@@ -51,9 +51,6 @@ def format_loggerresult(result):
     return logger
 
 
-
-
-
 def get_log(hostname,program_id,start_time,end_time,lines):
     print (hostname,program_id,start_time,end_time,lines)
     ret = []
@@ -175,9 +172,28 @@ def list(request):
 def show_logger(request,id=None):
 
     if id:
-        sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
-        # print sapi.list_all_key()
+        programs = Program.objects.filter(id=id)
+        program_id = programs[0].program_id
+        hostname = programs[0].nodename
+        start_time = get_datetime_passed(0,5)
+        end_time = get_datetime()
+        lines = 50
+        log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
+
+        return render(request,"logger_manage.html",{'page_name':u"查看日志",
+                                                'query_button':"查询",
+                                                'log_content':log,
+                                                'all_minions':[],
+                                                'hostname':'0',
+                                                'program_id':program_id,
+                                                'lines':lines,
+                                                'start_time':start_time,
+                                                'end_time':end_time,
+                                                })
+
     return render(request,"logger_manage.html",{'page_name':u"查看日志"})
+
+
 
 
 def get_programid(request):
@@ -204,38 +220,3 @@ def get_allprogramid(request):
     for program in programs:
         programslist.append(program.program_id)
     return HttpResponse(json.dumps(programslist))
-
-
-
-def Map(request):
-    return render_to_response("map.html")
-    #return HttpResponse("Hello!")
-
-Place_dict = {
-    "GuangDong":{
-        "GuangZhou":["PanYu","HuangPu","TianHe"],
-        "QingYuan":["QingCheng","YingDe","LianShan"],
-        "FoShan":["NanHai","ShunDe","SanShui"]
-    },
-    "ShanDong":{
-        "JiNan":["LiXia","ShiZhong","TianQiao"],
-        "QingDao":["ShiNan","HuangDao","JiaoZhou"]
-    },
-    "HuNan":{
-        "ChangSha":["KaiFu","YuHua","WangCheng"],
-        "ChenZhou":["BeiHu","SuXian","YongXian"]
-    }
-};
-def Return_City_Data(request):
-    province = request.GET['Province']
-    print province
-    City_list = []
-    for city in Place_dict[province]:
-        City_list.append(city)
-    return HttpResponse(json.dumps(City_list))
-
-def Return_Country_Data(request):
-    province,city = request.GET['Province'],request.GET['City']
-    print province,city
-    Country_list = Place_dict[province][city]
-    return HttpResponse(json.dumps(Country_list))
