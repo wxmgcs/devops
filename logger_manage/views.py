@@ -163,7 +163,7 @@ def list(request):
                                                     'query_button':"查询",
                                                     'log_content':log,
                                                     'all_minions':minions,
-                                                    'programs':programs,
+                                                    # 'programs':programs,
                                                     'hostname':hostname,
                                                     'program_id':program_id,
                                                     'lines':lines,
