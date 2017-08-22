@@ -73,23 +73,32 @@ urlpatterns = [
     url(r'^deploy/project_manage/(?P<id>\d+)/edit/$', dviews.project_manage, name='project_edit'),
     url(r'^deploy/project_manage/deploy/$', dviews.project_deploy, name='project_deploy'),
     url(r'^audit/log_audit/$', uviews.audit_log, name='log_audit'),
+    
     url(r'^asset/server_info/$', aviews.get_server_asset_info, name='server_info'),
     url(r'^asset/idc/list/$', aviews.idc_asset_list, name='idc_asset_list'),
     url(r'^asset/idc/add/$', aviews.idc_asset_manage, name='idc_add'),
     url(r'^asset/idc/edit/(?P<aid>\d+)/(?P<action>[\w-]+)/$', aviews.idc_asset_manage, name='idc_manage'),
     url(r'^asset/load_city/$', aviews.geo_input, name='load_city'),
+    
     url(r'^monitor/control_board/$',monitor_views.control_board,name='control_board'),
+    
     url(r'^program_manage/list/$',program_views.program_list,name='program_list'),
     url(r'^program_manage/edit/(?P<id>\d+)/$',program_views.program_edit,name='program_edit'),
     url(r'^program_manage/delete/(?P<id>\d+)/$',program_views.program_delete,name='program_delete'),
+    url(r'^program_manage/stop/(?P<id>\d+)/$',program_views.program_stop,name='program_stop'),
+    url(r'^program_manage/start/(?P<id>\d+)/$',program_views.program_start,name='program_start'),
+    url(r'^program_manage/restart/(?P<id>\d+)/$',program_views.program_restart,name='program_restart'),
+
     url(r'^logger_manage/logger_list/$',logger_views.list,name='logger_list'),
     url(r'^logger_manage/show_logger/(?P<id>\d+)/$',logger_views.show_logger,name='show_logger'),
     url(r'^logger_manage/get_programid/$',logger_views.get_programid,name='get_programid'),
     url(r'^logger_manage/get_allprogramid/$',logger_views.get_allprogramid,name='get_allprogramid'),
+    
     url(r'^vpn_manage/edit/(?P<id>\d+)/$',vpn_views.edit,name='vpn_edit'),
     url(r'^vpn_manage/list/$',vpn_views.list,name='vpn_list'),
     url(r'^vpn_manage/add/$',vpn_views.edit,name='vpn_add'),
     url(r'^vpn_manage/delete/(?P<id>\d+)/$',vpn_views.delete,name='vpn_delete'),
+    
     url(r'^deploy/page_test$',dviews.page_test,name='page_test'),
 
 

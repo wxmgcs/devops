@@ -10,7 +10,7 @@ from program_manage.forms import  ProgramForm
 import functools
 import warnings
 from django.contrib.auth.decorators import login_required
-
+from program_manage import program_helper
 
 @login_required
 def program_list(request):
@@ -168,5 +168,50 @@ def program_delete(request,id=None):
             return redirect('program_list')
         else:
             return redirect('program_list')
+    else:
+        raise Http404
+
+
+
+
+def program_stop(request,id=None):
+    if request.user.is_superuser:
+        if id and request.method == 'GET':
+            program = get_object_or_404(Program, pk=id)
+            nodename = program.nodename
+            program_id = program.program_id
+            tag = "stop"
+            program_helper.run_cmd(nodename,program_id,tag)
+            return HttpResponse("ok")
+        else:
+            return HttpResponse("error")
+    else:
+        raise Http404
+
+def program_start(request,id=None):
+    if request.user.is_superuser:
+        if id and request.method == 'GET':
+            program = get_object_or_404(Program, pk=id)
+            nodename = program.nodename
+            program_id = program.program_id
+            tag = "start"
+            program_helper.run_cmd(nodename,program_id,tag)
+            return HttpResponse("ok")
+        else:
+            return HttpResponse("error")
+    else:
+        raise Http404
+
+def program_restart(request,id=None):
+    if request.user.is_superuser:
+        if id and request.method == 'GET':
+            program = get_object_or_404(Program, pk=id)
+            nodename = program.nodename
+            program_id = program.program_id
+            tag = "restart"
+            program_helper.run_cmd(nodename,program_id,tag)
+            return HttpResponse("ok")
+        else:
+            return HttpResponse("error")
     else:
         raise Http404

@@ -43,25 +43,7 @@
                                     </div>
                                 </div>
                             </div>
-
                             程序列表</h2>
-                        <!--<ul class="nav navbar-right panel_toolbox">-->
-                            <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
-                            <!--</li>-->
-                            <!--<li class="dropdown">-->
-                                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"-->
-                                   <!--aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
-                                <!--<ul class="dropdown-menu" role="menu">-->
-                                    <!--<li><a href="#">Settings 1</a>-->
-                                    <!--</li>-->
-                                    <!--<li><a href="#">Settings 2</a>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
-                            <!--</li>-->
-                            <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
-                            <!--</li>-->
-                        <!--</ul>-->
-
                         <div class="clearfix"></div>
                     </div>
 
@@ -139,11 +121,9 @@
                                                 <a href="#" data-toggle="dropdown" role="button"
                                                    aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">-->
-                                                        <!--程序管理-->
-                                                    <!--</button>-->
-                                                    <li><a href="#" data-target="#myModalLabel" data-toggle="modal" type="button">程序管理</a>
-                                                    </li>
+                                                    <li><a id='stop_{{program.id}}' href="#" value="/program_manage/stop/{{program.id}}/" type="button" onclick="submit_programcmd(this)">停止</a></li>
+                                                    <li><a id='start_{{program.id}}' href="#" value="/program_manage/start/{{program.id}}/" type="button" onclick="submit_programcmd(this)">启动</a></li>
+                                                    <li><a id='restart_{{program.id}}' href="#" value="/program_manage/restart/{{program.id}}/" type="button" onclick="submit_programcmd(this)">重启</a></li>
                                                     <li><a href="/logger_manage/show_logger/{{program.id}}/">日志管理</a>
                                                     <!--</li>-->
                                                     <li><a href="/program_manage/edit/{{program.id}}/">修改信息</a>
@@ -159,9 +139,30 @@
                                         </ul>
                                     </td>
                                 </tr>
+
                                 {% endfor %}
                                 </tbody>
                             </table>
+                            <div class="modal fade" id="programManageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="programManageModalLabel">确定</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--<form class="form-inline ng-pristine ng-valid" method="post" action="" enctype="multipart/form-data">-->
+                                                <!--{% csrf_token %}-->
+                                                <!--<fieldset>-->
+                                                    <br/><br/>
+                                                    <button type="submit" class="btn btn-primary ng-binding" data-dismiss="modal">取消</button>
+                                                    <button type="submit" class="btn btn-primary ng-binding" data-dismiss="modal" onclick="sure_commit()" >确定</button>
+                                                <!--</fieldset>-->
+                                            <!--</form>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -220,10 +221,31 @@ function do_action(){
 }
 
 function del_program(programid){
-    alert("del program")
+    alert("del program");
 
 }
 
+var url = '';
+function submit_programcmd(obj){
+    console.log("#"+obj.id);
+    url = $("#"+obj.id).attr("value")
+    var text = obj.text
+
+    console.log(url);
+    console.log(text);
+    text = "确定"+text+"?";
+    document.getElementById("programManageModalLabel").innerHTML = text;
+    $('#programManageModal').modal('show');
+
+
+}
+
+function sure_commit(){
+    $.getJSON(url,{'text':"2121"},function(ProgramID_list){
+    //                    console.log(ProgramID_list);      //测试使用
+                    });
+    url = '';
+}
 
 </script>
 
