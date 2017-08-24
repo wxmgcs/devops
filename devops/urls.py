@@ -25,6 +25,7 @@ from monitor import views as monitor_views
 from program_manage import views as program_views
 from logger_manage import views as logger_views
 from vpn_manage import views as vpn_views
+from monitor import views as monitor_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -101,6 +102,8 @@ urlpatterns = [
     url(r'^vpn_manage/delete/(?P<id>\d+)/$',vpn_views.delete,name='vpn_delete'),
     
     url(r'^deploy/page_test$',dviews.page_test,name='page_test'),
+
+    url(r'^monitor/unicomrecharge/upload_genorder',monitor_views.upload_genorder,name='upload_genorder'),
 
 
 ]
