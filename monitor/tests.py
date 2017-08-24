@@ -42,7 +42,7 @@ def push_result():
     print parameters
     print
     parameters = {"genorder":parameters}
-    post("http://localhost:9992/monitor/unicomrecharge/upload_genorder/",parameters)
+    post("http://devops.ctu.com:9992/monitor/unicomrecharge/upload_genorder/",parameters)
 
 
 print order_list,
