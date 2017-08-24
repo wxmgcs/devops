@@ -25,8 +25,10 @@ class MyEmail:
             server.sendmail("<%s>" % self.user, self.to_list, self.get_attach())
             server.close()
             print "send email successful"
+            return True
         except Exception, e:
             print "send email failed %s", e
+            return False
 
     def get_attach(self):
         attach = MIMEMultipart()
@@ -80,7 +82,7 @@ EMAIL_PEER=["wangxiaomin@800617.com",]
 
 def send_mail(title,server):
     content = format_content(server)
-    send(EMAIL_USER_NAME,
+    return send(EMAIL_USER_NAME,
          EMAIL_PASSWORD,
          EMAIL_PEER,
          title,
