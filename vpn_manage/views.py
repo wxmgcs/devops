@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404, HttpResponse
 from vpn_manage.models import  VPN
 from vpn_manage.forms import  VPNForm
+import json
 
 def edit(request,id=None):
     if request.user.is_superuser:
@@ -41,6 +42,7 @@ def edit(request,id=None):
             return render(request, 'vpn_edit.html', {
             'form': form, 'action': action})
     else:
+        print (">>>> not find vpn manage page")
         raise Http404
 
 
@@ -55,7 +57,27 @@ def delete(request,id=None):
     else:
         raise Http404
 
-
 def list(request):
     vpns = VPN.objects.filter()
     return render(request,"vpn_manage.html",{'vpns':vpns})
+
+def get_config(request):
+    if request.method == "GET":
+        args = request.GET
+        area_ip = args['ip']
+        print area_ip
+        try:
+            vpn_obj = VPN.objects.get(area_ip=area_ip)
+            print "vpn_obj >> ",vpn_obj
+            vpn_username = vpn_obj.user_name
+            print (vpn_username)
+            pwd = vpn_obj.pwd
+            remote_ip = vpn_obj.remote_ip
+            status = vpn_obj.status
+            return HttpResponse(json.dumps(dict(result=1,data=[dict(vpn_username=vpn_username,vpn_pwd=pwd,remote_ip=remote_ip,areaip=area_ip,status=status)])))
+        except Exception,ex:
+            return HttpResponse(json.dumps(dict(result=2,reason=str(ex))))
+    else:
+        return HttpResponse(json.dumps(dict(result=3,reason="not support post method")))
+
+

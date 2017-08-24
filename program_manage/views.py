@@ -175,10 +175,12 @@ def program_delete(request,id=None):
             program = get_object_or_404(Program, pk=id)
             program.delete()
             all_program = Program.objects.filter()
-            print all_program
-            return render(request, 'program_list.html',{'all_program': all_program})
+            print (all_program)
+            return redirect('program_list.html')
+            # return render(request, 'program_list.html',{'all_program': all_program})
         else:
-            return render(request, 'program_list.html',{'program_id':''})
+            return redirect('program_list.html')
+            # return render(request, 'program_list.html',{'program_id':''})
     else:
         raise Http404
 

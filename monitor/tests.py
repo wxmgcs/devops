@@ -41,7 +41,7 @@ def push_result():
     parameters = json.dumps(order_list)
     print parameters
     print
-    parameters = {"genorder":parameters}
+    parameters = {"genorder":parameters,"vpn_code":"1"}
     post("http://devops.ctu.com:9992/monitor/unicomrecharge/upload_genorder/",parameters)
 
 

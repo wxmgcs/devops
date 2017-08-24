@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'logger_manage',
     'vpn_manage',
     'monitor',
+    'alarm',
 ]
 
 MIDDLEWARE_CLASSES = [
