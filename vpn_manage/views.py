@@ -74,7 +74,13 @@ def get_config(request):
             pwd = vpn_obj.pwd
             remote_ip = vpn_obj.remote_ip
             status = vpn_obj.status
-            return HttpResponse(json.dumps(dict(result=1,data=[dict(vpn_username=vpn_username,vpn_pwd=pwd,remote_ip=remote_ip,areaip=area_ip,status=status)])))
+            return HttpResponse(json.dumps(dict(result=1,data=[dict(vpn_username=vpn_username,
+                                                                    vpn_pwd=pwd,
+                                                                    remote_ip=remote_ip,
+                                                                    areaip=area_ip,
+                                                                    status=status,
+                                                                    id = vpn_obj.id
+                                                                    )])))
         except Exception,ex:
             return HttpResponse(json.dumps(dict(result=2,reason=str(ex))))
     else:
