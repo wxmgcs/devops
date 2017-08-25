@@ -41,4 +41,4 @@ def run_cmd(nodename,program_id,tag):
     arg = format_remotecmd(saltdir,projectdir,tag,program_id)
     tgt,fun,arg,expr_form = nodename,"cmd.run",arg,"list"
     print (tgt,fun,arg,expr_form)
-    sapi.remote_execution(tgt,fun,arg,expr_form)
+    #sapi.remote_execution(tgt,fun,arg,expr_form)
