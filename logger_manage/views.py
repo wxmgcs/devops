@@ -14,7 +14,7 @@ import datetime
 import json
 
 def get_datetime():
-    return time.strftime("%Y-%m-%d %H:%m", time.localtime())
+    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
 def get_datetime_passed(day,minutes):
     return (datetime.datetime.now() - datetime.timedelta(days = day,minutes = minutes)).strftime("%Y-%m-%d %H:%M")
