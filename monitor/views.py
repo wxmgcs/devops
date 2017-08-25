@@ -42,7 +42,10 @@ def statics_vpn_status(request):
             args = request.GET
             minute = args['min']
             int(minute)
-            return HttpResponse(json.dumps(dict(result=1,data=mysql_controller.get_genorder_status(minute))))
+            response = HttpResponse()
+            response.setdefault("Access-Control-Allow-Origin", "*")
+            response.content =json.dumps(dict(result=1,data=mysql_controller.get_genorder_status(minute)))
+            return response
         except Exception,ex:
             return HttpResponse(json.dumps(dict(result=0,reason=str(ex))))
 
