@@ -154,6 +154,7 @@ def list(request):
         for program in programs:
             hostname = program.nodename
             program_id = program.program_id
+
             log = get_log(hostname=hostname,program_id=program_id,start_time=start_time,end_time=end_time,lines=lines)
 
         minions = SaltHost.objects.filter(status=True)

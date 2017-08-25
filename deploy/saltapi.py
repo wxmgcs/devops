@@ -10,6 +10,7 @@
 
 import urllib2,urllib
 import ssl
+import requests
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
@@ -44,8 +45,11 @@ class SaltAPI(object):
         else:
             headers = {'X-Auth-Token': self.__token_id}
         req = urllib2.Request(url, obj, headers)
-        opener = urllib2.urlopen(req)
-        content = json.loads(opener.read())
+        # data = requests.post(url, headers, timeout=10)
+        # print data
+        opener = urllib2.urlopen(req,timeout=100)
+        data = opener.read()
+        content = json.loads(data)
         return content
 
     def list_all_key(self):

@@ -32,6 +32,10 @@ def format_remotecmd(saltdir,projectdir,cmd_tag,program_id):
     version = "wap"
     return "cd %s & python %s/manage.py -c %s -eid %s -v %s"%(saltdir,projectdir,cmd_tag,program_id,version)
 
+def format_remotecmd2(saltdir,projectdir,cmd_tag,program_id):
+    version = "wap"
+    return "cd %s & python %s/manage.py %s %s %s"%(saltdir,projectdir,cmd_tag,version,program_id)
+
 def run_cmd(nodename,program_id,tag):
     sapi = SaltAPI(url=settings.SALT_API['url'],username=settings.SALT_API['user'],password=settings.SALT_API['password'])
     os_type  = get_os_type(sapi,nodename)
@@ -41,4 +45,4 @@ def run_cmd(nodename,program_id,tag):
     arg = format_remotecmd(saltdir,projectdir,tag,program_id)
     tgt,fun,arg,expr_form = nodename,"cmd.run",arg,"list"
     print (tgt,fun,arg,expr_form)
-    #sapi.remote_execution(tgt,fun,arg,expr_form)
+    sapi.remote_execution(tgt,fun,arg,expr_form)
