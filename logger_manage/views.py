@@ -114,6 +114,7 @@ def list(request):
         print (minions,programs)
         start_time = get_datetime_passed(0,10)
         end_time = get_datetime()
+        print (start_time,end_time)
 
         return render(request,"logger_manage.html",{'page_name':u"查看日志",
                                                     'query_button':u"查询",
