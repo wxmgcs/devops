@@ -41,7 +41,9 @@ def get_salt_dir(os_type):
         return settings.PROJECT_UNICOMRECHARGE['saltdir_linux']
 
 def format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines):
-    return "cd %s & python %s/logger.py -c cat_log -eid %s -st %s -et %s -l %s"%(saltdir,projectdir,program_id,start_time,end_time,lines)
+    cmd = "cd %s & python %s/logger.py -c cat_log -eid %s -st %s -et %s -l %s"%(saltdir,projectdir,program_id,start_time,end_time,lines)
+    print ("remote cmd >>> ",(cmd))
+    return cmd
 
 
 def format_loggerresult(result):
