@@ -228,3 +228,7 @@ def program_restart(request,id=None):
             return HttpResponse("error")
     else:
         raise Http404
+
+
+def control_board(request):
+    return redirect('control_board.html')

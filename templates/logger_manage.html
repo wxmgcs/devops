@@ -207,6 +207,7 @@ width: 'auto'
 
 function get_programid(obj) {
     var hostname = obj.value;
+    
     var url = "{% url 'get_programid' %}?hostname=" + hostname;
         $(".loading").show();
     $.ajax({

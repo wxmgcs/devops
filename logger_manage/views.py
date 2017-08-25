@@ -76,7 +76,9 @@ def get_log(hostname,program_id,start_time,end_time,lines):
         saltdir = get_salt_dir(os_type)
 
         arg = format_remote_exec(saltdir,projectdir,program_id,start_time,end_time,lines)
-        result = sapi.remote_localexec(tgt,fun,arg,expr_form)
+        result = sapi.remote_execution(tgt,fun,arg,expr_form)
+        
+        
         result = format_loggerresult(result)
         if result != {}:
             ret.append(result)

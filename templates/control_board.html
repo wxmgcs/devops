@@ -1,29 +1,42 @@
 {% extends 'base.html' %}
 
 {% block css %}
+<!-- iCheck -->
+<link href="/static/css/green.css" rel="stylesheet">
 <link href="/static/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+<script src="/static/js/jquery.cascadeselect.js" type="text/javascript"></script>
+<script src="/static/js/echarts.js" type="text/javascript"></script>
 
-<script src="/static/js/bootstrap.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
 {% endblock %}
 
-
 {% block content %}
+
 <div class="right_col" role="main">
     <div class="">
         <div class="clearfix"></div>
 
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
-                <!--<div class="x_panel">-->
-                    <!--<div class="x_title">-->
-                        <!--<h2>eeee</h2>-->
-                        <!---->
-                    <!--</div>-->
-                <!--</div>-->
+            <div class="col-md-12 col-sm-12 col-xs-12" style="float-left">
+                <!--<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>-->
+                <div style="height:350px;width:30%" id="piediv">
+                </div>
+                <div style="height:350px;width:30%" id="piediv2">
+                </div>
+                <div style="height:350px;width:30%" id="piediv3">
+                </div>
             </div>
         </div>
+        <!--<div>-->
+            <!--<div style="height:350px;width:40%" id="piediv">-->
+            <!--</div>-->
+            <!--<div style="height:350px;width:40%" id="piediv2">-->
+            <!--</div>-->
+            <!--<div style="height:350px;width:40%" id="piediv3">-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </div>
 
@@ -31,92 +44,323 @@
 
 
 <script language="JavaScript">
+
+<!--function get_data(){-->
+
+        <!--return false;-->
+
+<!--}-->
+
+echartsTest = {
+    ZX: function (legendName, _rq, _cpxdata) {
+        var myChart = echarts.init(document.getElementById('piediv'));
+        option = {
+            title: {
+                text: "",
+                subtext: '单位：个'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: "{b} : {c}"
+            },
+            legend: {
+                data: legendName
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    //mark: { show: true },
+                    //dataView: { show: true, readOnly: false },
+                    //magicType: { show: true, type: ['line', 'bar'] },
+                    //restore: { show: true },
+                    //saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: _rq
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }
+            ],
+            series: _cpxdata
+        };
+        myChart.setOption(option);
+    }
+
+}
+
+
+echartsTest2 = {
+    ZX: function (legendName, _rq, _cpxdata) {
+        var myChart = echarts.init(document.getElementById('piediv2'));
+        option = {
+            title: {
+                text: "",
+                subtext: '单位：个'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: "{b} : {c}"
+            },
+            legend: {
+                data: legendName
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    //mark: { show: true },
+                    //dataView: { show: true, readOnly: false },
+                    //magicType: { show: true, type: ['line', 'bar'] },
+                    //restore: { show: true },
+                    //saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: _rq
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }
+            ],
+            series: _cpxdata
+        };
+        myChart.setOption(option);
+    }
+
+}
+
+echartsTest3 = {
+    ZX: function (legendName, _rq, _cpxdata) {
+        var myChart = echarts.init(document.getElementById('piediv3'));
+        option = {
+            title: {
+                text: "",
+                subtext: '单位：个'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: "{b} : {c}"
+            },
+            legend: {
+                data: legendName
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    //mark: { show: true },
+                    //dataView: { show: true, readOnly: false },
+                    //magicType: { show: true, type: ['line', 'bar'] },
+                    //restore: { show: true },
+                    //saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: _rq
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }
+            ],
+            series: _cpxdata
+        };
+        myChart.setOption(option);
+    }
+
+}
+
+
 $(document).ready(function() {
+        var data;
+        var url = "http://ops.jzhu.cn:9992/monitor/statics_vpn_status/?min=15";
+         $(".loading").show();
+         $.ajax({
+            type:"GET",
+            url: url,
+            data:{},
+            success:function(ret) {
+            $(".loading").hide();
+            console.log("!!!!!!!!");
+            console.log(ret);
+            data= ret;
+            json_data = JSON.parse( data );
+            console.log(json_data);
+            var objArray = json_data.data;
+                    var dataArray = [];  //纵坐标
+            var dataZrray =[];   //横坐标
+                    _ysData = [];
+                    for (var i = 0; i < objArray.length; i++) {
+                        dataArray.push(objArray[i].count);
+                dataZrray.push(objArray[i].vpn_code)
+                        _ysData.push("rgb(42,170,227)");
+                    }
+                    _series = [];
+                    _series[0] = {
+                        name: '15分钟内VPN下单数', type: 'line', data: dataArray, itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    color: '#0088cc'
+                                },
+                                color: function (params) {
+                                    var colorList = _ysData;
+                                    return colorList[params.dataIndex];
+                                }
+                            },//鼠标悬停时：
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        },
 
-    <!--标题-->
-    <!--为图表配置标题：-->
-    var title = {
-       text: '程序运行状态'
-   };
+                    };
 
-    <!--副标题-->
-    <!--为图表配置副标题：-->
-   var subtitle = {
-        text: '来源: ops.jzhu.cn'
-   };
+    echartsTest.ZX(['15分钟内VPN下单数'], dataZrray, _series)
 
-   <!--X 轴-->
-<!--配置要在 X 轴显示的项。-->
-   var xAxis = {
-       categories: ['一月', '二月', '三月', '四月', '五月', '六月'
-              ,'七月', '八月', '九月', '十月', '十一月', '十二月']
-   };
+            },
+            errors:function(e){
+                       alert("error");
+                   }
+            });
 
- <!--Y 轴-->
- <!--配置要在 Y 轴显示的项。-->
-   var yAxis = {
-      title: {
-         text: '成功数'
-      },
-      plotLines: [{
-         value: 0,
-         width: 1,
-         color: '#808080'
-      }]
-   };
 
-<!--提示信息-->
-<!--配置提示信息：-->
-   var tooltip = {
-      valueSuffix: '\xB0C'
-   }
+            var data;
+        var url = "http://ops.jzhu.cn:9992/monitor/statics_vpn_status/?min=30";
+         $(".loading").show();
+         $.ajax({
+            type:"GET",
+            url: url,
+            data:{},
+            success:function(ret) {
+            $(".loading").hide();
+            console.log("!!!!!!!!");
+            console.log(ret);
+            data= ret;
+            json_data = JSON.parse( data );
+            console.log(json_data);
+            var objArray = json_data.data;
+                    var dataArray = [];  //纵坐标
+            var dataZrray =[];   //横坐标
+                    _ysData = [];
+                    for (var i = 0; i < objArray.length; i++) {
+                        dataArray.push(objArray[i].count);
+                dataZrray.push(objArray[i].vpn_code)
+                        _ysData.push("rgb(42,170,227)");
+                    }
+                    _series = [];
+                    _series[0] = {
+                        name: '30分钟内VPN下单数', type: 'line', data: dataArray, itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    color: '#0088cc'
+                                },
+                                color: function (params) {
+                                    var colorList = _ysData;
+                                    return colorList[params.dataIndex];
+                                }
+                            },//鼠标悬停时：
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        },
 
-<!--展示方式-->
-<!--配置图表向右对齐：-->
-   var legend = {
-      layout: 'vertical',
-      align: 'right',
-      verticalAlign: 'middle',
-      borderWidth: 0
-   };
+                    };
 
-   var series =  [
-      {
-         name: '1月',
-         data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
-            26.5, 23.3, 18.3, 13.9, 9.6]
-      },
-      {
-         name: '2月',
-         data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
-            24.1, 20.1, 14.1, 8.6, 2.5]
-      },
-      {
-         name: '3月',
-         data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6,
-            17.9, 14.3, 9.0, 3.9, 1.0]
-      },
-      {
-         name: '4月',
-         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0,
-            16.6, 14.2, 10.3, 6.6, 4.8]
-      }
-   ];
+        echartsTest2.ZX(['30分钟内VPN下单数'], dataZrray, _series)
+            },
+            errors:function(e){
+                       alert("error");
+                   }
+            });
 
-    <!--第三步: 创建 json 数据-->
-   var json = {};
 
-   json.title = title;
-   json.subtitle = subtitle;
-   json.xAxis = xAxis;
-   json.yAxis = yAxis;
-   json.tooltip = tooltip;
-   json.legend = legend;
-   json.series = series;
 
-   $('#container').highcharts(json);
+            var data;
+        var url = "http://ops.jzhu.cn:9992/monitor/statics_vpn_status/?min=45";
+         $(".loading").show();
+         $.ajax({
+            type:"GET",
+            url: url,
+            data:{},
+            success:function(ret) {
+            $(".loading").hide();
+            console.log("!!!!!!!!");
+            console.log(ret);
+            data= ret;
+            json_data = JSON.parse( data );
+            console.log(json_data);
+            var objArray = json_data.data;
+                    var dataArray = [];  //纵坐标
+            var dataZrray =[];   //横坐标
+                    _ysData = [];
+                    for (var i = 0; i < objArray.length; i++) {
+                        dataArray.push(objArray[i].count);
+                dataZrray.push(objArray[i].vpn_code)
+                        _ysData.push("rgb(42,170,227)");
+                    }
+                    _series = [];
+                    _series[0] = {
+                        name: '45分钟内VPN下单数', type: 'line', data: dataArray, itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    color: '#0088cc'
+                                },
+                                color: function (params) {
+                                    var colorList = _ysData;
+                                    return colorList[params.dataIndex];
+                                }
+                            },//鼠标悬停时：
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        },
+
+                    };
+
+    echartsTest3.ZX(['45分钟内VPN下单数'], dataZrray, _series)
+            },
+            errors:function(e){
+                       alert("error");
+                   }
+            });
+
+
+
 });
 </script>
+
+
 
 {% endblock %}
 
