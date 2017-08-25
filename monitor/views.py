@@ -49,17 +49,17 @@ def get_fixed_vpn(request):
         except Exception,ex:
             return HttpResponse(json.dumps(dict(result=0,reason=str(ex))))
         ret = mysql_controller.get_genorder_status(minute)
-        vpns = VPN.objects.filter()
+        vpns = VPN.objects.filter(status=1)
         vpn_size = len(vpns)
         if vpn_size == len(ret):
             return HttpResponse(json.dumps(dict(result=1,data=[])))
         result = []
-        for item in ret:
-            vpn_code = item['vpn_code']
-            ids = vpns.values('id')
-            ids = [int(item['id']) for item in ids]
-            if not vpn_code in ids:
-                result.append(vpn_code)
+        ids = vpns.values('id')
+        ids = [int(item['id']) for item in ids]
+        vpn_codes = [item['vpn_code'] for item in ret]
+        for id in ids:
+            if id not in vpn_codes:
+                result.append(id)
         return HttpResponse(json.dumps(dict(result=1,data=result)))
     else:
         return HttpResponse(json.dumps(dict(result=0,reason="not support",data=[])))
