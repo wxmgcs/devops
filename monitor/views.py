@@ -37,8 +37,16 @@ def statics_vpn_status(request):
         except Exception,ex:
             return HttpResponse(json.dumps(dict(result=0,reason=str(ex))))
         return HttpResponse(json.dumps(dict(result=1,data=mysql_controller.get_genorder_status(minute))))
-    else:
-        return HttpResponse(json.dumps(dict(result=0,reason="not support")))
+    elif request.method == "GET":
+        try:
+            args = request.GET
+            minute = args['min']
+            int(minute)
+            return HttpResponse(json.dumps(dict(result=1,data=mysql_controller.get_genorder_status(minute))))
+        except Exception,ex:
+            return HttpResponse(json.dumps(dict(result=0,reason=str(ex))))
+
+    return HttpResponse(json.dumps(dict(result=0,reason="not support")))
 
 def get_fixed_vpn(request):
     if request.method == "POST":
