@@ -108,6 +108,8 @@ urlpatterns = [
 
     url(r'^monitor/unicomrecharge/upload_genorder',monitor_views.upload_genorder,name='upload_genorder'),
     url(r'^monitor/alarm/',alarm_views.send_alarm,name='send_alarm'),
+    url(r'^monitor/statics_vpn_status/',monitor_views.statics_vpn_status,name='statics_vpn_status'),
+    url(r'^monitor/get_fixed_vpn/',monitor_views.get_fixed_vpn,name='get_fixed_vpn'),
 
 
 ]
