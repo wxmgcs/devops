@@ -18,7 +18,7 @@ def upload_genorder(request):
                 UnicomRechargeGenOrder.objects.create(eid=key,status=status,create_time=create_time,vpn_code=vpn_code)
         return HttpResponse(json.dumps(dict(result=0)))
     elif request.method == 'GET':
-        return HttpResponse("ok")
+        return HttpResponse(json.dumps(dict(result=0)))
     else:
         raise Http404
 
