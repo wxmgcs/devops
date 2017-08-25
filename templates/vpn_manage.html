@@ -59,6 +59,7 @@
                                     <th>用户名</th>
                                     <th>密码</th>
                                     <th>状态</th>
+                                    <th>内网IP</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -72,6 +73,7 @@
                                 {% else %}
                                 <td>{{ "已过期" }}</td>
                                 {% endif %}
+                                <td>{{ vpn.area_ip }}</td>
                                 <td align="left">
                                     <ul class="nav navbar-left">
                                         <li class="dropdown">
