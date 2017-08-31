@@ -23,3 +23,5 @@ http://css.cleanc.cn/
 
 cmdb= 采集数据+api+图表显示
 api的作用:避免过多连接数,避免一台机器被黑,导致的安全性问题.
+
+集成review board && jenkins
